@@ -11,9 +11,15 @@ public class Customer {
     private Address address;
     private Car car;
 
-    public Customer(int UserId, String FirstName, String LastName, String email, boolean passport, String streetAddress, String city) {
-        this.customer = new CustomerImpl(UserId, FirstName, LastName, email, passport);
+    public Customer(Address address, Car car) {
+        this.address = address;
+        this.car = car;
+    }
+
+    public Customer(int userid, String firstname, String lastname, String email, boolean passport, String streetAddress, String city) {
+        this.customer = new CustomerImpl(userid, firstname, lastname, email, passport);
         this.address = new Address(streetAddress, city);
+
     }
 
     public CustomerImpl getCustomer() {
@@ -42,7 +48,8 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer" + customer + "address = " + address;
+        return "\n Firstname\n "  + customer.getFirstname() + " \nLastname : \n" + customer.getLastname() +
+                " \nemail\n " + customer.getEmail();
     }
 }
 

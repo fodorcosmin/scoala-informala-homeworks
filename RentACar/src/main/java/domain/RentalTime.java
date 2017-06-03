@@ -34,5 +34,8 @@ public class RentalTime {
         this.endDate = endDate;
     }
 
-
+    @Override
+    public String toString() {
+        return "beginDate  = " + beginDate + " endDate = " + endDate;
+    }
 }

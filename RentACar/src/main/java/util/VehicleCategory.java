@@ -13,10 +13,15 @@ package util;
 public enum VehicleCategory {
     SPORT, SEDAN, HATCHBACK, LIMOUSINE,;
 
-    public VehicleCategory searchEnum(String s) {
-        if (s.equalsIgnoreCase("sport") || s.equalsIgnoreCase("sedan") || s.equals("hatchback") || s.equalsIgnoreCase("limousine"))
-        return null;
+    // Iterating through enum //
+    public static VehicleCategory search1(String test) {
+        for (VehicleCategory vehicle : VehicleCategory.values()) {
+            if (vehicle.name().equals(test)) {
+                return vehicle;
+
+            }
+
+        }
         return null;
     }
-
 }

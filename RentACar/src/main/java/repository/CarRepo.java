@@ -16,6 +16,9 @@ import static util.VehicleCategory.*;
  */
 public class CarRepo {
 
+
+
+
     public List<Car> carList;
     public List<RentalTime> rentalTimeList;
 
@@ -24,10 +27,10 @@ public class CarRepo {
         this.rentalTimeList=new RentalCalendar().rentalTimeList;
         this.carList = new ArrayList<Car>();
 
-        carList.add(new Car("Mercedes", "S500", 5, "black", 5, 4, true, true, true, DIESEL, LIMOUSINE, rentalTimeList, 400));
-        carList.add(new Car("Volkswagen", "Passat", 5, "blue", 5, 4, true, true, true, DIESEL, SEDAN, rentalTimeList, 200));
-        carList.add(new Car("Opel", "Astra", 5, "red", 5, 4, true, true, true, GAS, HATCHBACK, rentalTimeList, 150));
-        carList.add(new Car("Mitsubishi", "Outlander", 5, "white", 5, 4, true, false, true, GAS, SEDAN, rentalTimeList, 250));
+        carList.add(new Car(001,"Mercedes", "S500", 3.0f,"black", 5, 4, true, true, true, DIESEL, LIMOUSINE, rentalTimeList, 400));
+        carList.add(new Car(002,"Volkswagen", "Passat", 2.0f, "blue", 5, 4, true, true, true, DIESEL, SEDAN, rentalTimeList, 200));
+        carList.add(new Car(003,"Opel", "Astra", 1.7f, "red", 5, 4, true, true, true, GAS, HATCHBACK, rentalTimeList, 150));
+        carList.add(new Car(004,"Mitsubishi", "Outlander",2.0f,"white", 5, 4, true, false, true, GAS, SEDAN, rentalTimeList, 250));
 
 
     }
@@ -39,3 +42,4 @@ public class CarRepo {
 }
 
 
+//TODO Implement HASHMAP

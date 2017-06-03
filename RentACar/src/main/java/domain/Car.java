@@ -13,6 +13,7 @@ import java.util.List;
  * Car Class initialisation
  */
 public class Car {
+    private int carid;
     private String brand;
     private String model;
     private float size;
@@ -30,11 +31,8 @@ public class Car {
     // constructor
 
 
-    public Car(List<RentalTime> rentalTimeList) {
-        this.rentalTimeList = rentalTimeList;
-    }
-
-    public Car(String brand, String model, float size, String color, int seats, int doors, boolean ac, boolean gps, boolean gearbox, FuelType fuelType, VehicleCategory vehicleCategory, List<RentalTime> rentalTimeList, int priceperday) {
+    public Car(int carid, String brand, String model, float size, String color, int seats, int doors, boolean ac, boolean gps, boolean gearbox, FuelType fuelType, VehicleCategory vehicleCategory, List<RentalTime> rentalTimeList, int priceperday) {
+        this.carid = carid;
         this.brand = brand;
         this.model = model;
         this.size = size;
@@ -46,10 +44,9 @@ public class Car {
         this.gearbox = gearbox;
         this.fuelType = fuelType;
         this.vehicleCategory = vehicleCategory;
-        this.rentalTimeList = new RentalCalendar().rentalTimeList;
+        this.rentalTimeList = rentalTimeList;
         this.priceperday = priceperday;
     }
-
 
     public String getBrand() {
         return brand;
@@ -154,13 +151,10 @@ public class Car {
 
     @Override
     public String toString() {
-        return "brand = " + brand + ", model=" + model + " size = " + size + " color = " + color + " seats = " + seats + " doors = " + doors + "|" + "\n" +
-                "ac = " + ac + " gps = " + gps + " gearbox = " + gearbox + "\n" + "|" +
-                "fuelType = " + fuelType + " vehicleCategory = " + vehicleCategory + "\n" +
-                "rentalTimeList = " + rentalTimeList + "\n" + "priceperday" + priceperday;
+        return "" + brand + " " + model;
     }
-
     public void setRentalTimeList(List<RentalTime> rentalTimeList) {
         this.rentalTimeList = rentalTimeList;
     }
 }
+

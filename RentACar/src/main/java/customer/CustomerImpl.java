@@ -5,53 +5,46 @@ package customer;
  */
 public class CustomerImpl {
 
-
-    private int UserId;
-    private String FirstName;
-    private String LastName;
-    private String email;
-    private boolean passport = false;
-
     /**
-     * @param userId    ID of the user
-     * @param firstName First name of the user
-     * @param lastName  Last name of the user
-     * @param email     CustomerImpl email
-     * @param passport  CustomerImpl Passport
+     * @param // FIXME: 6/3/2017    ID of the user
+     * @param // FIXME: 6/3/2017  First name of the user
+     * @param // FIXME: 6/3/2017   Last name of the user
+     * @param // FIXME: 6/3/2017      CustomerImpl email
+     * @param // FIXME: 6/3/2017   CustomerImpl Passport
      */
 
 
-    public CustomerImpl(int userId, String firstName, String lastName, String email, boolean passport) {
-        UserId = userId;
-        FirstName = firstName;
-        LastName = lastName;
-        this.email = email;
-        this.passport = passport;
+    private int userid  ;
+    private String firstname;
+    private String lastname;
+    private String email;
+    private boolean passport = false;
+
+    public CustomerImpl(int userid, String firstname, String lastname, String email, boolean passport) {
     }
 
-
-    public int getUserId() {
-        return UserId;
+    public int getUserid() {
+        return userid;
     }
 
-    public void setUserId(int userId) {
-        UserId = userId;
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 
-    public String getFirstName() {
-        return FirstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        FirstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getLastName() {
-        return LastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        LastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getEmail() {
@@ -71,11 +64,16 @@ public class CustomerImpl {
     }
 
 
+
+
+
+
+
     @Override
     public String toString() {
-        return  "UserId=" + UserId + "\n" +
-                "FirstName = " + FirstName + "\n" +
-                "LastName = " + LastName + "\n" +
+        return  "UserId=" + userid + "\n" +
+                "FirstName = " + firstname + "\n" +
+                "LastName = " + lastname + "\n" +
                 "Email = " + email + "\n" +
                 "Passport=" + passport +"\n";
     }

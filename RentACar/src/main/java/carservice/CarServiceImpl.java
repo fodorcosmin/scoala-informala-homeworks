@@ -1,6 +1,5 @@
 package carservice;
 
-import customer.Customer;
 import domain.Car;
 import domain.RentalTime;
 import repository.CarRepo;
@@ -21,12 +20,6 @@ public class CarServiceImpl implements CarService {
         this.carList = new CarRepo().carList;
     }
 
-    /**
-     * Public method findCarsByBrand searches cars by brand.
-     *
-     * @param brand holds value of car brand
-     * @return list of found cars.
-     */
     public List<Car> findCarsByBrand(String brand) {
         List<Car> foundCars = new ArrayList<Car>();
         for (Car car : carList)
@@ -41,15 +34,6 @@ public class CarServiceImpl implements CarService {
 
     }
 
-
-    /**
-     * Public method findCarsByMakeAndModel searches cars by make and model.
-     *
-     * @param brand holds value of car make
-     * @param model holds value f car model
-     * @return list of found cars.
-     */
-
     public List<Car> findCarsByBrandAndModel(String brand, String model) {
         List<Car> foundCars = new ArrayList<Car>();
         for (Car car : carList) {
@@ -63,16 +47,6 @@ public class CarServiceImpl implements CarService {
         }
         return foundCars;
     }
-
-    /**
-     * Public method findCarsByMultipleCategories searches cars by make, model, color, seats.
-     *
-     * @param brand value of car make
-     * @param model value of car model
-     * @param color value of car color
-     * @param seats value of car seats
-     * @return list of found cars
-     */
 
     public List<Car> findCarsByMultipleCategories(FuelType fuelType, boolean gps, int seats) {
         List<Car> foundCars = new ArrayList<Car>();
@@ -100,39 +74,44 @@ public class CarServiceImpl implements CarService {
                 Date carBegin = rentalTime.getBeginDate();
                 Date carEnd = rentalTime.getEndDate();
 
+                /* it seems complicated
                 if ((beginDate.before(carBegin) && endDate.before(carEnd) && endDate.after(carBegin)) ||
                         (beginDate.before(carBegin) && endDate.after(carEnd)) ||
                         (beginDate.after(carBegin) && beginDate.before(carEnd) && endDate.after(carBegin) && endDate.before(carEnd)) ||
                         (beginDate.after(carBegin) && beginDate.before(carEnd) && endDate.after(carEnd))) {
                     isAvailable = false;
                     break;
+                }*/
+                if (beginDate.before(carEnd) && endDate.after(carBegin)) {
+                    isAvailable = false;
+                    break;
+                }
+
+                if (isAvailable) {
+                    foundCars.add(car);
                 }
             }
 
-            if (isAvailable) {
-                foundCars.add(car);
+            if (foundCars.size() == 0) {
+                System.out.println("No cars are available");
             }
-        }
 
-        if (foundCars.size() == 0) {
-            System.out.println("No cars are available");
-        }
 
+        }
         return foundCars;
     }
 
-    public void add(String brand, String model, float size, String color, int seats, int doors, boolean ac, boolean gps, boolean gearbox, FuelType fuelType, VehicleCategory vehicleCategory, List<RentalTime> rentalTimeList, int priceperday) {
-        carList.add(new Car(brand, model, size, color, seats, doors, ac, gps, gearbox, fuelType, vehicleCategory, rentalTimeList, priceperday));
+
+    public void addCar(int carid,String brand, String model, float size, String color, int seats, int doors, boolean ac, boolean gps, boolean gearbox, FuelType fuelType, VehicleCategory vehicleCategory, List<RentalTime> rentalTimeList, int priceperday) {
+        carList.add(new Car(carid,brand, model, size, color, seats, doors, ac, gps, gearbox, fuelType, vehicleCategory, rentalTimeList, priceperday));
     }
 
-    public List<Car> del(String brand, String model) {
-        List<Car> delCars = new ArrayList<Car>();
+    public void del(String brand, String model) {
         for (Car car : carList) {
             if ((car.getBrand()) == brand && (car.getModel() == model)) {
-                delCars.remove(car);
+                carList.remove(car);
             }
         }
-        return delCars;
     }
 
     public List<Car> priceForCars(String brand, String model) {

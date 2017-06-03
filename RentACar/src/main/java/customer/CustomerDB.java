@@ -28,8 +28,8 @@ public class CustomerDB {
     public Customer searchCustomerByFullName(String FirstName, String LastName) {
         Customer customer = null;
         for (Customer customer1 : customerDBS) {
-            if (FirstName == customer1.getCustomer().getFirstName() &&
-                    LastName == customer1.getCustomer().getLastName()) {
+            if (FirstName == customer1.getCustomer().getFirstname() &&
+                    LastName == customer1.getCustomer().getLastname()) {
                 customer1 = customer;
             }
         }
@@ -39,10 +39,9 @@ public class CustomerDB {
     public void searchUserById(int id) {
         boolean idFound = false;
         for (Customer customer1 : customerDBS) {
-            if (id == customer1.getCustomer().getUserId()) {
+            if (id == customer1.getCustomer().getUserid()) {
                 idFound = true;
-                System.out.println("User id exists in Database with the name of " + customer1.getCustomer().getFirstName() + " " + customer1.getCustomer().getLastName());
-                break;
+                System.out.println("User id exists in Database with the name of " + customer1.getCustomer().getFirstname());
             }
         }
         if (!idFound) {
@@ -51,7 +50,7 @@ public class CustomerDB {
     }
     public void delCustomerById(int id) {
         for (Customer customer1 : customerDBS) {
-            if (id == customer1.getCustomer().getUserId()) {
+            if (id == customer1.getCustomer().getUserid()) {
                 customerDBS.remove(customer1);
             }
 

@@ -6,10 +6,15 @@ package util;
 public enum FuelType {
     GAS, DIESEL, GPL;
 
-    public FuelType searchEnum(String s) {
-        if (s.equalsIgnoreCase("gas") || s.equalsIgnoreCase("disel") || s.equals("gpl")) {
-            return null;
+
+    // Iterating through enum //
+    public static FuelType search1(String test) {
+
+        for (FuelType fuelType : FuelType.values()) {
+            if (fuelType.name().equals(test)) {
+                return fuelType;
+            }
         }
-            return null;
-        }
+        return null;
     }
+}

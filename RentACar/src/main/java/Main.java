@@ -1,5 +1,6 @@
 import carservice.CarServiceImpl;
 import customer.CustomerDB;
+import domain.RentalTime;
 import repository.CarRepo;
 import util.FuelType;
 import util.VehicleCategory;
@@ -7,20 +8,24 @@ import util.VehicleCategory;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 /**
  * Created by Fodor Cosmin on 5/26/2017.
  */
 public class Main {
+
     private static CustomerDB customerDB;
     private static CarServiceImpl carService;
     private static CarRepo carRepo;
-    private static FuelType fuelType;
-    private static VehicleCategory vehicleCategory;
+    private static FuelType fuelType1;
+    private static VehicleCategory vehicleCategory1;
 
     public static void main(String[] args) {
+
         customerDB = new CustomerDB();
         carRepo = new CarRepo();
         carService = new CarServiceImpl();
@@ -70,6 +75,7 @@ public class Main {
         switch (option) {
             case 1:
                 carService.getAll();
+                mainMenu(input);
                 break;
             case 2:
                 customerDB.showCustomers();
@@ -79,10 +85,13 @@ public class Main {
                 break;
             case 4:
                 delACar(input);
+                break;
             case 5:
                 addACustomer(input);
+                break;
             case 6:
                 delACustomer();
+                break;
             case 7:
                 mainMenu(input);
         }
@@ -132,7 +141,7 @@ public class Main {
                 searchAvailableCars(input);
                 break;
             case 2:
-            pricePerDay(input);
+                pricePerDay(input);
             case 3:
                 mainMenu(input);
 
@@ -149,9 +158,9 @@ public class Main {
             System.out.println("Enter the end date:");
             Date endDate = df.parse(input.next());
             System.out.println(carService.findAvailableCars(beginDate, endDate));
+            mainMenu(input);
         } catch (ParseException e) {
             e.printStackTrace();
-            mainMenu(input);
         }
     }
 
@@ -196,7 +205,7 @@ public class Main {
         customerDB.searchCustomerByFullName(firstName, lastName);
 
         if (customerDB != null) {
-            System.out.println("Username exists in Database already with the name of " + firstName  +  lastName);
+            System.out.println("Username exists in Database already with the name of " + firstName + " " + lastName);
             mainMenu(input);
         } else {
             System.out.println("Username not found in Database");
@@ -245,10 +254,9 @@ public class Main {
         customerDB.searchUserById(id);
         System.out.println("Are you sure you want to delete user? :");
         String decision = input.next();
-        if(decision.equalsIgnoreCase("y")) {
+        if (decision.equalsIgnoreCase("y")) {
             customerDB.delCustomerById(id);
-        }
-        else if (decision.equalsIgnoreCase("n")) {
+        } else if (decision.equalsIgnoreCase("n")) {
             System.out.println("Exit to main menu!");
             mainMenu(input);
         }
@@ -279,11 +287,16 @@ public class Main {
             boolean gearbox = input.nextBoolean();
             System.out.println("Enter the car's fueltype : ");
             String fuel = input.next();
-            fuelType = fuelType.searchEnum(fuel);
-
+            FuelType fuelType1 = FuelType.search1(fuel);
             System.out.println("Enter the car's type : ");
             String type = input.next();
-            vehicleCategory = vehicleCategory.searchEnum(type);
+            VehicleCategory vehicleCategory1 = VehicleCategory.search1(type);
+            List<RentalTime> rentalTimeList = new ArrayList<RentalTime>();
+            System.out.println("Enter the car's price per day : ");
+            int price = input.nextInt();
+            System.out.println("Enter the cars's id :");
+            int carid = input.nextInt();
+            carService.addCar(carid,brand, model, size, color, seats, doors, ac, gps, gearbox, fuelType1, vehicleCategory1, rentalTimeList, price);
 
 
         } else if
@@ -299,6 +312,8 @@ public class Main {
         String model = input.next();
         carService.del(brand, model);
         System.out.println("The following car was removed from repository : " + brand + model);
+        //TODO implement the method update
+        adminMenu(input);
     }
 
     private static void pricePerDay(Scanner input) {
@@ -306,9 +321,7 @@ public class Main {
         String brand = input.next();
         System.out.println("Enter a car's model :");
         String model = input.next();
-        carService.priceForCars(brand,model);
-
-
+        carService.priceForCars(brand, model);
 
 
     }

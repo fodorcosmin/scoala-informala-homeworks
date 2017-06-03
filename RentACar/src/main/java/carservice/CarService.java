@@ -43,7 +43,7 @@ public interface CarService {
      *
      * @param
      */
-    void add(String brand, String model, float size, String color, int doors, int seats, boolean ac, boolean gps, boolean gearbox, FuelType fuelType,
+    void addCar(int carid,String brand, String model, float size, String color, int doors, int seats, boolean ac, boolean gps, boolean gearbox, FuelType fuelType,
              VehicleCategory vehicleCategory, List<RentalTime> rentalTimeList,int priceperday);
 
     /**
@@ -51,14 +51,20 @@ public interface CarService {
      *
      *
      */
-    public List<Car> del(String brand,String model);
+    void del(String brand,String model);
 
     /**
      * updates the current status of cars in the system.
-     *
-     * @param car
      */
     void update();
+
+
+    /**
+     *
+     * @param brand return the price
+     * @param model return the price
+     * @return
+     */
     List<Car> priceForCars(String brand,String model);
 }
 
