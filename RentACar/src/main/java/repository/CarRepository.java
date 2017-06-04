@@ -1,7 +1,6 @@
 package repository;
 
 
-
 import domain.Car;
 import util.FuelType;
 
@@ -65,13 +64,6 @@ public interface CarRepository {
      * Display all cars available
      * @param car
      */
-
-
-
-
-
-
-
 
 
 }

@@ -25,7 +25,8 @@ public class CarServiceImpl implements CarService {
         for (Car car : carList)
 
             if (car.getBrand().equalsIgnoreCase(brand)) {
-                System.out.println(foundCars.add(car));
+                foundCars.add(car);
+                System.out.println(car.getBrand() + " " + "exists in the repository.");
             }
         if (foundCars.size() == 0) {
             System.out.println("Car not found in database");
@@ -38,7 +39,8 @@ public class CarServiceImpl implements CarService {
         List<Car> foundCars = new ArrayList<Car>();
         for (Car car : carList) {
             if ((car.getModel().equalsIgnoreCase(model)) && (car.getBrand().equalsIgnoreCase(brand))) {
-                System.out.println("Car found!!!" + foundCars.add(car));
+                foundCars.add(car);
+                System.out.println("Car exists in the repository !!!" + car.getBrand() + " " + car.getModel());
             }
 
         }
@@ -52,7 +54,7 @@ public class CarServiceImpl implements CarService {
         List<Car> foundCars = new ArrayList<Car>();
 
         for (Car car : carList) {
-            if ((car.getFuelType() == fuelType
+            if ((car.getFuelType() == fuelType //TODO better if it was case-insensitive
                     && (car.isGps() && (car.getSeats() == seats)))) {
                 foundCars.add(car);
             }
@@ -102,15 +104,22 @@ public class CarServiceImpl implements CarService {
     }
 
 
-    public void addCar(int carid,String brand, String model, float size, String color, int seats, int doors, boolean ac, boolean gps, boolean gearbox, FuelType fuelType, VehicleCategory vehicleCategory, List<RentalTime> rentalTimeList, int priceperday) {
-        carList.add(new Car(carid,brand, model, size, color, seats, doors, ac, gps, gearbox, fuelType, vehicleCategory, rentalTimeList, priceperday));
+    public void addCar(int carid, String brand, String model, float size, String color, int seats, int doors, boolean ac, boolean gps, boolean gearbox, FuelType fuelType, VehicleCategory vehicleCategory, List<RentalTime> rentalTimeList, int priceperday) {
+        carList.add(new Car(carid, brand, model, size, color, seats, doors, ac, gps, gearbox, fuelType, vehicleCategory, rentalTimeList, priceperday));
     }
 
     public void del(String brand, String model) {
+        Car foundCar = null;
         for (Car car : carList) {
-            if ((car.getBrand()) == brand && (car.getModel() == model)) {
-                carList.remove(car);
+            if ((car.getBrand()).equalsIgnoreCase(brand) && (car.getModel().equalsIgnoreCase(model))) {
+                foundCar = car;
+                break;
             }
+        }
+        if (foundCar != null) {
+            carList.remove(foundCar);
+        } else {
+            System.out.println("Car not found in database ! ");
         }
     }
 
@@ -136,5 +145,7 @@ public class CarServiceImpl implements CarService {
         System.out.println("This is the car list : \n" + carList.toString());
     }
 
-
+    public List<Car> getCarList() {
+        return carList;
+    }
 }

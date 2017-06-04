@@ -30,36 +30,46 @@ public class CustomerDB {
         for (Customer customer1 : customerDBS) {
             if (FirstName == customer1.getCustomer().getFirstname() &&
                     LastName == customer1.getCustomer().getLastname()) {
-                customer1 = customer;
+                customer = customer1;
             }
         }
 
         return customer;
     }
+
     public void searchUserById(int id) {
         boolean idFound = false;
         for (Customer customer1 : customerDBS) {
             if (id == customer1.getCustomer().getUserid()) {
                 idFound = true;
-                System.out.println("User id exists in Database with the name of " + customer1.getCustomer().getFirstname());
+                System.out.println("User id exists in the databse with the name of " + customer1.getCustomer().getFirstname() + " " + customer1.getCustomer().getLastname());
             }
         }
         if (!idFound) {
             System.out.println("User not found!");
         }
     }
+
     public void delCustomerById(int id) {
+        Customer foundCustomer = null;
         for (Customer customer1 : customerDBS) {
             if (id == customer1.getCustomer().getUserid()) {
-                customerDBS.remove(customer1);
+                foundCustomer = customer1;
+
+                if (foundCustomer != null) {
+                    customerDBS.remove(customer1);
+                }
+
+            } else {
+                System.out.println("User id not found in database.");
             }
-
-
         }
     }
-    public void addCustomer(int UserId, String firstName, String lastName, String email, boolean passport, String streetAddress, String city) {
-        customerDBS.add(new Customer(UserId, firstName, lastName, email, passport, streetAddress, city));
+
+    public void addCustomer(int userId, String firstName, String lastName, String email, boolean passport, String streetAddress, String city) {
+        customerDBS.add(new Customer(userId, firstName, lastName, email, passport, streetAddress, city));
     }
+
     public void showCustomers() {
         System.out.println(String.format(customerDBS.toString()));
     }

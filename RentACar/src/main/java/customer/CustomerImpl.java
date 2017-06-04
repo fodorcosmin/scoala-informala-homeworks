@@ -14,13 +14,18 @@ public class CustomerImpl {
      */
 
 
-    private int userid  ;
+    private int userid;
     private String firstname;
     private String lastname;
     private String email;
     private boolean passport = false;
 
     public CustomerImpl(int userid, String firstname, String lastname, String email, boolean passport) {
+        this.userid = userid;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.passport = passport;
     }
 
     public int getUserid() {
@@ -63,20 +68,19 @@ public class CustomerImpl {
         this.passport = passport;
     }
 
-
-
-
-
-
-
     @Override
     public String toString() {
-        return  "UserId=" + userid + "\n" +
-                "FirstName = " + firstname + "\n" +
-                "LastName = " + lastname + "\n" +
-                "Email = " + email + "\n" +
-                "Passport=" + passport +"\n";
+        return "\nFirst name='" + firstname + ", Last name='" + lastname + ", Email='" + email;
     }
+
+    //    @Override
+//    public String toString() {
+//        return "UserId=" + userid + "\n" +
+//                "FirstName = " + firstname + "\n" +
+//                "LastName = " + lastname + "\n" +
+//                "Email = " + email + "\n" +
+//                "Passport=" + passport + "\n";
+//    }
 }
 
 

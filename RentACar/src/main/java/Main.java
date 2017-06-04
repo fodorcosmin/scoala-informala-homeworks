@@ -188,7 +188,7 @@ public class Main {
         System.out.println("Enter the fuel type:");
         Scanner input = new Scanner(System.in);
         String fuel = input.nextLine();
-        FuelType fuelType = Enum.valueOf(FuelType.class, fuel);
+        FuelType fuelType = FuelType.search1(fuel);
         System.out.println("GPS :");
         boolean gps = input.nextBoolean();
         System.out.println("Number of seats:");
@@ -227,7 +227,7 @@ public class Main {
         String decision = input.next();
         if (decision.equalsIgnoreCase("y")) {
             System.out.println("Enter customer's id: ");
-            int UserId = input.nextInt();
+            int userId = input.nextInt();
             System.out.println("Enter customer's first name : ");
             String firstName = input.next();
             System.out.println("Enter customer's last name : ");
@@ -240,7 +240,7 @@ public class Main {
             String streetAddress = input.nextLine();
             System.out.println("Enter customer city : ");
             String city = input.nextLine();
-            customerDB.addCustomer(UserId, firstName, lastName, email, passport, streetAddress, city);
+            customerDB.addCustomer(userId, firstName, lastName, email, passport, streetAddress, city);
         } else if
                 (decision.equalsIgnoreCase("n"))
             System.out.println("Serving next customer!");
@@ -294,9 +294,7 @@ public class Main {
             List<RentalTime> rentalTimeList = new ArrayList<RentalTime>();
             System.out.println("Enter the car's price per day : ");
             int price = input.nextInt();
-            System.out.println("Enter the cars's id :");
-            int carid = input.nextInt();
-            carService.addCar(carid,brand, model, size, color, seats, doors, ac, gps, gearbox, fuelType1, vehicleCategory1, rentalTimeList, price);
+            carService.addCar(carService.getCarList().size() + 1, brand, model, size, color, seats, doors, ac, gps, gearbox, fuelType1, vehicleCategory1, rentalTimeList, price);
 
 
         } else if
@@ -311,7 +309,7 @@ public class Main {
         System.out.println("Enter the car's model :");
         String model = input.next();
         carService.del(brand, model);
-        System.out.println("The following car was removed from repository : " + brand + model);
+        System.out.println("The following car was removed from repository : " + brand + " " + model);
         //TODO implement the method update
         adminMenu(input);
     }

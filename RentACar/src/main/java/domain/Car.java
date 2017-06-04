@@ -153,6 +153,7 @@ public class Car {
     public String toString() {
         return "" + brand + " " + model;
     }
+
     public void setRentalTimeList(List<RentalTime> rentalTimeList) {
         this.rentalTimeList = rentalTimeList;
     }

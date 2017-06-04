@@ -16,8 +16,8 @@ public class Customer {
         this.car = car;
     }
 
-    public Customer(int userid, String firstname, String lastname, String email, boolean passport, String streetAddress, String city) {
-        this.customer = new CustomerImpl(userid, firstname, lastname, email, passport);
+    public Customer(int userId, String firstName, String lastName, String email, boolean passport, String streetAddress, String city) {
+        this.customer = new CustomerImpl(userId, firstName, lastName, email, passport);
         this.address = new Address(streetAddress, city);
 
     }
@@ -48,8 +48,8 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "\n Firstname\n "  + customer.getFirstname() + " \nLastname : \n" + customer.getLastname() +
-                " \nemail\n " + customer.getEmail();
+        return customer.toString();
     }
+
 }
 

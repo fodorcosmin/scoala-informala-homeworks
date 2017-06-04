@@ -12,10 +12,9 @@ public interface CustomerInt {
     /**
      * Searching user by Full Name
      */
-    Customer searchCustomerByFullName(String FirstName,String LastName );
+    Customer searchCustomerByFullName(String FirstName, String LastName);
 
     /**
-     *
      * @param firstName
      * @param lastName
      */
