@@ -25,11 +25,11 @@ public class CustomerDB {
         return " ";
     }
 
-    public Customer searchCustomerByFullName(String FirstName, String LastName) {
+    public Customer searchCustomerByFullName(String firstName, String lastName) {
         Customer customer = null;
         for (Customer customer1 : customerDBS) {
-            if (FirstName == customer1.getCustomer().getFirstname() &&
-                    LastName == customer1.getCustomer().getLastname()) {
+            if (firstName.equalsIgnoreCase(customer1.getCustomer().getFirstname()) &&
+                    lastName.equalsIgnoreCase(customer1.getCustomer().getLastname())) {
                 customer = customer1;
             }
         }
@@ -55,14 +55,17 @@ public class CustomerDB {
         for (Customer customer1 : customerDBS) {
             if (id == customer1.getCustomer().getUserid()) {
                 foundCustomer = customer1;
+                break;
 
-                if (foundCustomer != null) {
-                    customerDBS.remove(customer1);
-                }
 
-            } else {
-                System.out.println("User id not found in database.");
             }
+
+
+        }
+        if (foundCustomer != null) {
+            customerDBS.remove(foundCustomer);
+        } else {
+            System.out.println("User id not found in database.");
         }
     }
 

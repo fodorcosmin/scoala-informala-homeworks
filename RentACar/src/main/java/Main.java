@@ -256,6 +256,7 @@ public class Main {
         String decision = input.next();
         if (decision.equalsIgnoreCase("y")) {
             customerDB.delCustomerById(id);
+            adminMenu(input);
         } else if (decision.equalsIgnoreCase("n")) {
             System.out.println("Exit to main menu!");
             mainMenu(input);

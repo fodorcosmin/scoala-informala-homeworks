@@ -23,29 +23,16 @@ public class RentalCalendar {
 
 
         // Cars that are *NOT* available *RENTED*  //
-        List<RentalTime> mondisCalendar = new ArrayList<RentalTime>();
+        List<RentalTime> firstCalendar = new ArrayList<RentalTime>();
+        calendar.set(Calendar.MONTH, 10);
         calendar.set(Calendar.DAY_OF_WEEK, 6);
         Date beginDate = calendar.getTime();
+        calendar.set(Calendar.MONTH, 11);
         calendar.set(Calendar.DAY_OF_WEEK, 7);
         Date endDate = calendar.getTime();
-        mondisCalendar.add(new RentalTime(beginDate, endDate));
+        firstCalendar.add(new RentalTime(beginDate, endDate));
 
-        calendar.set(Calendar.MONTH, 11);
-        calendar.set(Calendar.WEEK_OF_MONTH, 3);
-        Date beginDate2 = calendar.getTime();
-        calendar.set(Calendar.MONTH, 11);
-        calendar.set(Calendar.WEEK_OF_MONTH, 4);
-        Date endDate2 = calendar.getTime();
-        mondisCalendar.add(new RentalTime(beginDate2, endDate2));
-
-
-        calendar.set(Calendar.MONTH, 10);
-        Date beginDate3 = calendar.getTime();
-        calendar.set(Calendar.MONTH, 11);
-        Date endDate3 = calendar.getTime();
-        mondisCalendar.add(new RentalTime(beginDate3, endDate3));
-
-        rentalTimeList = mondisCalendar;
+        rentalTimeList = firstCalendar;
     }
 
 }
