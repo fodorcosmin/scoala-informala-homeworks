@@ -1,8 +1,7 @@
 package repository;
 
 
-import domain.Car;
-import util.FuelType;
+import domain.car.Car;
 
 import java.util.List;
 
@@ -14,36 +13,19 @@ import java.util.List;
  * Repository interface for the class car
  */
 public interface CarRepository {
+    /**
+     * Get all cars in the system
+     *
+     * @return List<Cars>
+     */
+    List<Car> getAll();
 
     /**
-     * Returns all the cars by value
+     * Adds all cars in the system
      *
-     * @param brand
-     * @return
+     * @param carList
      */
-    List<Car> getCarsByBrand(String brand);
-
-    /**
-     * return all the cars by model
-     *
-     * @param model
-     * @return
-     */
-    List<Car> getCarsByModel(String model);
-
-    /**
-     * returns all the cars by fueltype
-     *
-     * @param fuelType
-     * @return
-     */
-    List<Car> getCarsByFuelType(FuelType fuelType);
-
-    /**
-     * add a cars in the system
-     *
-     * @param car
-     */
+    void addAll(List<Car> carList);
 
     void add(Car car);
 
@@ -55,13 +37,13 @@ public interface CarRepository {
     void delete(Car car);
 
     /**
-     * updates the current status of cars in the system.
+     * Updates the current status of cars in the system.
      *
      * @param car
      */
-    void update(Car car);
+    void updateCars(Car car);
     /**
-     * Display all cars available
+     * Updates car information in the system
      * @param car
      */
 

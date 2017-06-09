@@ -1,19 +1,19 @@
-package domain;
+package domain.car;
 /**
  * Created by Fodor Cosmin
  */
 
-import util.FuelType;
-import util.VehicleCategory;
+import domain.RentalTime;
 
+import java.util.ArrayList;
 import java.util.List;
-
 
 /**
  * Car Class initialisation
  */
 public class Car {
-    private int carid;
+    List<RentalTime> rentalTimeList;
+    private int carId;
     private String brand;
     private String model;
     private float size;
@@ -22,17 +22,19 @@ public class Car {
     private int doors;
     private boolean ac = false;
     private boolean gps = false;
-    private boolean gearbox = false; //TRUE automatic, FALSE manual
+    private GearBox gearBox;
     private FuelType fuelType;
     private VehicleCategory vehicleCategory;
-    private List<RentalTime> rentalTimeList;
-    private int priceperday;
-
     // constructor
 
 
-    public Car(int carid, String brand, String model, float size, String color, int seats, int doors, boolean ac, boolean gps, boolean gearbox, FuelType fuelType, VehicleCategory vehicleCategory, List<RentalTime> rentalTimeList, int priceperday) {
-        this.carid = carid;
+    public Car(String brand, String model) {
+        this.brand = brand;
+        this.model = model;
+    }
+
+    public Car() {
+        this.carId = carId;
         this.brand = brand;
         this.model = model;
         this.size = size;
@@ -41,18 +43,25 @@ public class Car {
         this.doors = doors;
         this.ac = ac;
         this.gps = gps;
-        this.gearbox = gearbox;
+        this.gearBox = gearBox;
         this.fuelType = fuelType;
         this.vehicleCategory = vehicleCategory;
-        this.rentalTimeList = rentalTimeList;
-        this.priceperday = priceperday;
+        this.rentalTimeList = new ArrayList<RentalTime>();
+    }
+
+    public int getCarId() {
+        return carId;
+    }
+
+    public void setCarId(int carId) {
+        this.carId = carId;
     }
 
     public String getBrand() {
         return brand;
     }
 
-    public void setBrand(String make) {
+    public void setBrand(String brand) {
         this.brand = brand;
     }
 
@@ -112,12 +121,20 @@ public class Car {
         this.gps = gps;
     }
 
-    public boolean isGearbox() {
-        return gearbox;
+    public List<RentalTime> getRentalTimeList() {
+        return rentalTimeList;
     }
 
-    public void setGearbox(boolean gearbox) {
-        this.gearbox = gearbox;
+    public void setRentalTimeList(List<RentalTime> rentalTimeList) {
+        this.rentalTimeList = rentalTimeList;
+    }
+
+    public GearBox getGearBox() {
+        return gearBox;
+    }
+
+    public void setGearBox(GearBox gearBox) {
+        this.gearBox = gearBox;
     }
 
     public FuelType getFuelType() {
@@ -136,26 +153,11 @@ public class Car {
         this.vehicleCategory = vehicleCategory;
     }
 
-    public List<RentalTime> getRentalTimeList() {
-        return rentalTimeList;
-    }
-
-
-    public int getPriceperday() {
-        return priceperday;
-    }
-
-    public void setPriceperday(int priceperday) {
-        this.priceperday = priceperday;
-    }
 
     @Override
     public String toString() {
         return "" + brand + " " + model;
     }
 
-    public void setRentalTimeList(List<RentalTime> rentalTimeList) {
-        this.rentalTimeList = rentalTimeList;
-    }
 }
 

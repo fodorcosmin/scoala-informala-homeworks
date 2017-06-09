@@ -1,33 +1,34 @@
-import carservice.CarServiceImpl;
-import customer.CustomerDB;
-import domain.RentalTime;
-import repository.CarRepo;
-import util.FuelType;
-import util.VehicleCategory;
+import domain.car.Car;
+import domain.car.FuelType;
+import domain.car.GearBox;
+import domain.car.VehicleCategory;
+import domain.customer.Customer;
+import repository.CarRepositoryImpl;
+import repository.CustomerRepositoryImpl;
+import services.CarServiceImpl;
+import services.CustomerServiceImpl;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.Scanner;
 
 /**
  * Created by Fodor Cosmin on 5/26/2017.
  */
 public class Main {
-
-    private static CustomerDB customerDB;
+    private static CustomerRepositoryImpl customerRepositoryImpl;
+    private static CustomerServiceImpl customerServiceImpl;
     private static CarServiceImpl carService;
-    private static CarRepo carRepo;
+    private static CarRepositoryImpl carRepositoryImpl;
     private static FuelType fuelType1;
     private static VehicleCategory vehicleCategory1;
 
     public static void main(String[] args) {
-
-        customerDB = new CustomerDB();
-        carRepo = new CarRepo();
+        customerRepositoryImpl = new CustomerRepositoryImpl();
+        customerServiceImpl = new CustomerServiceImpl();
+        carRepositoryImpl = new CarRepositoryImpl();
         carService = new CarServiceImpl();
         Scanner input = new Scanner(System.in);
         mainMenu(input);
@@ -74,25 +75,22 @@ public class Main {
 
         switch (option) {
             case 1:
-                carService.getAll();
+                carRepositoryImpl.getAll();
                 mainMenu(input);
                 break;
-            case 2:
-                customerDB.showCustomers();
-                mainMenu(input);
-            case 3: //todo implement add car
+            case 2: //todo implement add car
                 addACar(input);
                 break;
-            case 4:
+            case 3:
                 delACar(input);
                 break;
-            case 5:
+            case 4:
                 addACustomer(input);
                 break;
-            case 6:
+            case 5:
                 delACustomer();
                 break;
-            case 7:
+            case 6:
                 mainMenu(input);
         }
     }
@@ -141,7 +139,7 @@ public class Main {
                 searchAvailableCars(input);
                 break;
             case 2:
-                pricePerDay(input);
+            mainMenu(input); //TODO
             case 3:
                 mainMenu(input);
 
@@ -188,7 +186,7 @@ public class Main {
         System.out.println("Enter the fuel type:");
         Scanner input = new Scanner(System.in);
         String fuel = input.nextLine();
-        FuelType fuelType = FuelType.search1(fuel);
+        FuelType fuelType = FuelType.search(fuel);
         System.out.println("GPS :");
         boolean gps = input.nextBoolean();
         System.out.println("Number of seats:");
@@ -202,9 +200,9 @@ public class Main {
         String firstName = input.next();
         System.out.println("Enter customer Last name : ");
         String lastName = input.next();
-        customerDB.searchCustomerByFullName(firstName, lastName);
+        customerServiceImpl.searchCustomerByFullName(firstName, lastName);
 
-        if (customerDB != null) {
+        if (customerServiceImpl != null) {
             System.out.println("Username exists in Database already with the name of " + firstName + " " + lastName);
             mainMenu(input);
         } else {
@@ -218,7 +216,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the id : ");
         int id = input.nextInt();
-        customerDB.searchUserById(id);
+        customerServiceImpl.searchCustomerById(id);
         mainMenu(input);
     }
 
@@ -240,7 +238,7 @@ public class Main {
             String streetAddress = input.nextLine();
             System.out.println("Enter customer city : ");
             String city = input.nextLine();
-            customerDB.addCustomer(userId, firstName, lastName, email, passport, streetAddress, city);
+            customerRepositoryImpl.add(new Customer(userId, firstName, lastName, email, passport, streetAddress, city));
         } else if
                 (decision.equalsIgnoreCase("n"))
             System.out.println("Serving next customer!");
@@ -251,11 +249,11 @@ public class Main {
         System.out.println("Enter the id for the customer you want to delete :");
         Scanner input = new Scanner(System.in);
         int id = input.nextInt();
-        customerDB.searchUserById(id);
+        customerServiceImpl.searchCustomerById(id);
         System.out.println("Are you sure you want to delete user? :");
         String decision = input.next();
         if (decision.equalsIgnoreCase("y")) {
-            customerDB.delCustomerById(id);
+            customerRepositoryImpl.delCustomerById(id);
             adminMenu(input);
         } else if (decision.equalsIgnoreCase("n")) {
             System.out.println("Exit to main menu!");
@@ -268,6 +266,8 @@ public class Main {
         System.out.println("Do you want to add a car in the database: Y/N");
         String decision = input.next();
         if (decision.equalsIgnoreCase("y")) {
+            System.out.println("Enter the car's id:");
+            int carId = input.nextInt();
             System.out.println("Enter car brand : ");
             String brand = input.next();
             System.out.println("Enter car model : ");
@@ -284,18 +284,18 @@ public class Main {
             boolean ac = input.nextBoolean();
             System.out.println("Enter if car has gps : ");
             boolean gps = input.nextBoolean();
-            System.out.println("Enter if car has automatic gearbox : ");
-            boolean gearbox = input.nextBoolean();
+            System.out.println("Enter the car's gearbox : ");
+            String gearbox = input.next();
+            GearBox gearBox1 = GearBox.search(gearbox);
             System.out.println("Enter the car's fueltype : ");
             String fuel = input.next();
-            FuelType fuelType1 = FuelType.search1(fuel);
+            FuelType fuelType1 = FuelType.search(fuel);
             System.out.println("Enter the car's type : ");
             String type = input.next();
-            VehicleCategory vehicleCategory1 = VehicleCategory.search1(type);
-            List<RentalTime> rentalTimeList = new ArrayList<RentalTime>();
+            VehicleCategory vehicleCategory1 = VehicleCategory.search(type);
             System.out.println("Enter the car's price per day : ");
             int price = input.nextInt();
-            carService.addCar(carService.getCarList().size() + 1, brand, model, size, color, seats, doors, ac, gps, gearbox, fuelType1, vehicleCategory1, rentalTimeList, price);
+            carRepositoryImpl.add(new Car());
 
 
         } else if
@@ -309,20 +309,19 @@ public class Main {
         String brand = input.next();
         System.out.println("Enter the car's model :");
         String model = input.next();
-        carService.del(brand, model);
-        System.out.println("The following car was removed from repository : " + brand + " " + model);
-        //TODO implement the method update
-        adminMenu(input);
-    }
-
-    private static void pricePerDay(Scanner input) {
-        System.out.println("Enter a car's brand :");
-        String brand = input.next();
-        System.out.println("Enter a car's model :");
-        String model = input.next();
-        carService.priceForCars(brand, model);
-
+        carService.findCarsByBrandAndModel(brand, model);
+        Car car = new Car(brand, model);
+        System.out.println("Do you want to delete the car? Y/N");
+        String dec = input.next();
+        if (dec.equalsIgnoreCase("y")) {
+            carRepositoryImpl.delete(car);
+            System.out.println("The following car was removed from repository : " + brand + " " + model);
+        } else if
+                (dec.equalsIgnoreCase("n"))
+            mainMenu(input);
 
     }
+
+
 }
 

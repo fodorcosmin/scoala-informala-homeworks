@@ -1,28 +1,35 @@
-package carservice;
+package repository;
 
-import domain.Car;
 import domain.RentalTime;
-import repository.CarRepo;
-import util.FuelType;
-import util.VehicleCategory;
+import domain.car.Car;
+import domain.car.FuelType;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 /**
- * SearchService Class offers search services for cars in car list.
+ * Created by Fodor Cosmin on 5/23/2017.
  */
-public class CarServiceImpl implements CarService {
-    private List<Car> carList;
+public class CarRepositoryImpl implements CarRepository {
 
-    public CarServiceImpl() {
-        this.carList = new CarRepo().carList;
+    private List<Car> cars;
+
+
+    public CarRepositoryImpl() {
+        this.cars = new ArrayList<>();
+
     }
 
-    public List<Car> findCarsByBrand(String brand) {
+
+    public List<Car> getCars() {
+        return cars;
+    }
+
+
+    public List<Car> getCarsByBrand(String brand) {
         List<Car> foundCars = new ArrayList<Car>();
-        for (Car car : carList)
+        for (Car car : cars)
 
             if (car.getBrand().equalsIgnoreCase(brand)) {
                 foundCars.add(car);
@@ -35,9 +42,10 @@ public class CarServiceImpl implements CarService {
 
     }
 
-    public List<Car> findCarsByBrandAndModel(String brand, String model) {
+
+    public List<Car> getCarsByBrandAndModel(String brand, String model) {
         List<Car> foundCars = new ArrayList<Car>();
-        for (Car car : carList) {
+        for (Car car : cars) {
             if ((car.getModel().equalsIgnoreCase(model)) && (car.getBrand().equalsIgnoreCase(brand))) {
                 foundCars.add(car);
                 System.out.println("Car exists in the repository !!!" + car.getBrand() + " " + car.getModel());
@@ -50,11 +58,11 @@ public class CarServiceImpl implements CarService {
         return foundCars;
     }
 
-    public List<Car> findCarsByMultipleCategories(FuelType fuelType, boolean gps, int seats) {
+    public List<Car> getCarsByMultipleCategories(FuelType fuelType, boolean gps, int seats) {
         List<Car> foundCars = new ArrayList<Car>();
 
-        for (Car car : carList) {
-            if ((car.getFuelType() == fuelType //TODO better if it was case-insensitive
+        for (Car car : cars) {
+            if ((car.getFuelType() == fuelType
                     && (car.isGps() && (car.getSeats() == seats)))) {
                 foundCars.add(car);
             }
@@ -67,10 +75,11 @@ public class CarServiceImpl implements CarService {
         return foundCars;
     }
 
-    public List<Car> findAvailableCars(Date beginDate, Date endDate) {
+
+    public List<Car> getAvailableCars(Date beginDate, Date endDate) {
         List<Car> foundCars = new ArrayList<Car>();
 
-        for (Car car : carList) {
+        for (Car car : cars) {
             boolean isAvailable = true;
             for (RentalTime rentalTime : car.getRentalTimeList()) {
                 Date carBegin = rentalTime.getBeginDate();
@@ -104,48 +113,28 @@ public class CarServiceImpl implements CarService {
     }
 
 
-    public void addCar(int carid, String brand, String model, float size, String color, int seats, int doors, boolean ac, boolean gps, boolean gearbox, FuelType fuelType, VehicleCategory vehicleCategory, List<RentalTime> rentalTimeList, int priceperday) {
-        carList.add(new Car(carid, brand, model, size, color, seats, doors, ac, gps, gearbox, fuelType, vehicleCategory, rentalTimeList, priceperday));
+    public List<Car> getAll() {
+        return cars;
     }
 
-    public void del(String brand, String model) {
-        Car foundCar = null;
-        for (Car car : carList) {
-            if ((car.getBrand()).equalsIgnoreCase(brand) && (car.getModel().equalsIgnoreCase(model))) {
-                foundCar = car;
-                break;
-            }
-        }
-        if (foundCar != null) {
-            carList.remove(foundCar);
-        } else {
-            System.out.println("Car not found in database ! ");
-        }
+    public void addAll(List<Car> cars) {
+        cars.addAll(cars);
     }
 
-    public List<Car> priceForCars(String brand, String model) {
-        List<Car> foundCars = new ArrayList<Car>();
-        for (Car car : carList) {
-            if ((car.getBrand().equalsIgnoreCase(brand)) && (car.getModel().equalsIgnoreCase(model))) {
-                foundCars.add(car);
-                System.out.println("Car price per day for this model is " + car.getPriceperday());
-
-            }
-            if (foundCars.size() == 0) {
-                System.out.println("Car not found in database");
-            }
-        }
-        return foundCars;
+    public void add(Car car) {
+        cars.add(car);
     }
 
-    public void update() {
+    public void delete(Car car) {
+        cars.remove(car);
+
     }
 
-    public void getAll() {
-        System.out.println("This is the car list : \n" + carList.toString());
+    public void updateCars(Car car) {
+        cars.set(cars.indexOf(car), car);
+
     }
 
-    public List<Car> getCarList() {
-        return carList;
-    }
 }
+
+
