@@ -1,2 +1,3 @@
 # scoala-informala-homeworks
-Fodor Cosmin
+
+Do not read this!
