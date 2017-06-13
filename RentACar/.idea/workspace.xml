@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f4d7216-bd17-4f4d-ae79-624476c5742e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/domain/car/GearBox.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/repository/CarRepositoryImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/repository/CustomerRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/repository/CustomerRepositoryImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/services/CarService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/services/CustomerService.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/carservice/CarService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/carservice/CarServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/customer/Customer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/customer/CustomerDB.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/customer/CustomerInt.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/util/Login.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/address/Address.java" afterPath="$PROJECT_DIR$/src/main/java/domain/customer/Address.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/customer/CustomerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/domain/customer/Customer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/Car.java" afterPath="$PROJECT_DIR$/src/main/java/domain/car/Car.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/repository/CarRepo.java" afterPath="$PROJECT_DIR$/src/main/java/services/CarServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/FuelType.java" afterPath="$PROJECT_DIR$/src/main/java/domain/car/FuelType.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/VehicleCategory.java" afterPath="$PROJECT_DIR$/src/main/java/domain/car/VehicleCategory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/repository/CarRepository.java" afterPath="$PROJECT_DIR$/src/main/java/repository/CarRepository.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -182,6 +162,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Fodor Cosmin &lt;aftercosmin@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <favorite-branches>
       <branch-storage>
@@ -600,6 +585,14 @@
       <option name="presentableId" value="Default" />
       <updated>1497012997532</updated>
     </task>
+    <task id="LOCAL-00001" summary="is compiles every 4 tries!">
+      <created>1497362998251</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1497362998251</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -656,6 +649,13 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="is compiles every 4 tries!" />
+    <option name="LAST_COMMIT_MESSAGE" value="is compiles every 4 tries!" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
