@@ -1,32 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f4d7216-bd17-4f4d-ae79-624476c5742e" name="Default" comment="it compiles every 4 tries!">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/domain/transaction/Transaction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/repository/customer/CustomerRepositoryImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/repository/transaction/TransactionRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/repository/transaction/TransactionRepositoryImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/services/transaction/TransactionInterceptorService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/services/transaction/TransactionInterceptorServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/util/PaymentMethod.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/repository/CustomerRepositoryImpl.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/.idea/Model.iml" afterPath="$PROJECT_DIR$/src/main/.idea/Model.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/.idea/misc.xml" afterPath="$PROJECT_DIR$/src/main/.idea/misc.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/.idea/modules.xml" afterPath="$PROJECT_DIR$/src/main/.idea/modules.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/.idea/workspace.xml" afterPath="$PROJECT_DIR$/src/main/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/RentalCalendar.java" afterPath="$PROJECT_DIR$/src/main/java/domain/calendar/RentalCalendar.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/RentalTime.java" afterPath="$PROJECT_DIR$/src/main/java/domain/calendar/RentalTime.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/repository/CarRepository.java" afterPath="$PROJECT_DIR$/src/main/java/repository/car/CarRepository.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/repository/CarRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/repository/car/CarRepositoryImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/repository/CustomerRepository.java" afterPath="$PROJECT_DIR$/src/main/java/repository/customer/CustomerRepository.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/services/CarService.java" afterPath="$PROJECT_DIR$/src/main/java/services/car/CarService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/services/CarServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/services/car/CarServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/services/CustomerService.java" afterPath="$PROJECT_DIR$/src/main/java/services/customer/CustomerService.java" />
+    <list default="true" id="1f4d7216-bd17-4f4d-ae79-624476c5742e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/car/Car.java" afterPath="$PROJECT_DIR$/src/main/java/domain/car/Car.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/customer/Customer.java" afterPath="$PROJECT_DIR$/src/main/java/domain/customer/Customer.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,6 +49,7 @@
             <state relative-caret-position="192">
               <caret line="145" column="21" lean-forward="false" selection-start-line="145" selection-start-column="21" selection-end-line="145" selection-end-column="21" />
               <folding>
+                <element signature="imports" expanded="false" />
                 <element signature="method#getCarsByBrand#0;class#CarRepositoryImpl#0" expanded="false" />
                 <element signature="method#getCarsByBrandAndModel#0;class#CarRepositoryImpl#0" expanded="false" />
                 <element signature="method#getCarsByMultipleCategories#0;class#CarRepositoryImpl#0" expanded="false" />
@@ -87,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/repository/customer/CustomerRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
-              <caret line="56" column="46" lean-forward="false" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+              <caret line="54" column="46" lean-forward="false" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
               <folding>
                 <element signature="docComment;method#add#0;class#CustomerRepository#0" expanded="false" />
                 <element signature="docComment;method#saveCustomers#0;class#CustomerRepository#0" expanded="false" />
@@ -118,8 +95,9 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/repository/transaction/TransactionRepositoryImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="243">
-              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+              <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding>
+                <element signature="imports" expanded="false" />
                 <element signature="method#addAll#0;class#TransactionRepositoryImpl#0" expanded="false" />
                 <element signature="method#add#0;class#TransactionRepositoryImpl#0" expanded="false" />
                 <element signature="method#delete#0;class#TransactionRepositoryImpl#0" expanded="false" />
@@ -408,7 +386,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
-    <property name="SearchEverywhereHistoryKey" value="run&#9;ACTION&#9;ActivateRunToolWindow&#10;terminal&#9;ACTION&#9;ActivateTerminalToolWindow" />
+    <property name="SearchEverywhereHistoryKey" value="terminal&#9;ACTION&#9;ActivateTerminalToolWindow&#10;run&#9;ACTION&#9;ActivateRunToolWindow" />
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
   </component>
@@ -686,7 +664,14 @@
       <option name="project" value="LOCAL" />
       <updated>1497363030134</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="it compiles every 4 tries! :)">
+      <created>1497473894913</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1497473894913</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -708,7 +693,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1040" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -720,9 +704,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5021008" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3340494" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3340494" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35123524" sideWeight="0.49789914" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35123524" sideWeight="0.49789914" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
@@ -749,8 +733,10 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="is compiles every 4 tries!" />
     <MESSAGE value="it compiles every 4 tries!" />
-    <option name="LAST_COMMIT_MESSAGE" value="it compiles every 4 tries!" />
+    <MESSAGE value="it compiles every 4 tries! :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="it compiles every 4 tries! :)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -885,6 +871,7 @@
         <state relative-caret-position="357">
           <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#getCarsByBrand#0;class#CarRepositoryImpl#0" expanded="false" />
             <element signature="method#getCarsByBrandAndModel#0;class#CarRepositoryImpl#0" expanded="false" />
             <element signature="method#getCarsByMultipleCategories#0;class#CarRepositoryImpl#0" expanded="false" />
@@ -1038,6 +1025,7 @@
         <state relative-caret-position="272">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#getCarsByBrand#0;class#CarRepositoryImpl#0" expanded="false" />
             <element signature="method#getCarsByBrandAndModel#0;class#CarRepositoryImpl#0" expanded="false" />
             <element signature="method#getCarsByMultipleCategories#0;class#CarRepositoryImpl#0" expanded="false" />
@@ -1113,6 +1101,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1259,8 +1248,9 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/repository/transaction/TransactionRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#addAll#0;class#TransactionRepositoryImpl#0" expanded="false" />
             <element signature="method#add#0;class#TransactionRepositoryImpl#0" expanded="false" />
             <element signature="method#delete#0;class#TransactionRepositoryImpl#0" expanded="false" />
@@ -1323,7 +1313,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/repository/customer/CustomerRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
-          <caret line="56" column="46" lean-forward="false" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+          <caret line="54" column="46" lean-forward="false" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
           <folding>
             <element signature="docComment;method#add#0;class#CustomerRepository#0" expanded="false" />
             <element signature="docComment;method#saveCustomers#0;class#CustomerRepository#0" expanded="false" />
@@ -1360,6 +1350,7 @@
         <state relative-caret-position="192">
           <caret line="145" column="21" lean-forward="false" selection-start-line="145" selection-start-column="21" selection-end-line="145" selection-end-column="21" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#getCarsByBrand#0;class#CarRepositoryImpl#0" expanded="false" />
             <element signature="method#getCarsByBrandAndModel#0;class#CarRepositoryImpl#0" expanded="false" />
             <element signature="method#getCarsByMultipleCategories#0;class#CarRepositoryImpl#0" expanded="false" />
