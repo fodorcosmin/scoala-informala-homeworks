@@ -1,0 +1,20 @@
+## Ignore all files using the extension
+
+*.iml
+*.iws
+*.xml
+
+#Blacklist folders
+target/
+.idea/
+RentACar/*.iml
+RentACar/*.iws
+RentACar/*.xml
+RentACar/.idea/
+RentACar/target/
+
+
+# Whitelist some files
+!README.md
+\!pom.xml
+
