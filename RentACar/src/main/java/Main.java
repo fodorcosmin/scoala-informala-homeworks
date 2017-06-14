@@ -2,6 +2,7 @@ import domain.car.Car;
 import domain.car.FuelType;
 import domain.car.GearBox;
 import domain.car.VehicleCategory;
+
 import domain.customer.Customer;
 import repository.car.CarRepositoryImpl;
 import repository.customer.CustomerRepositoryImpl;
@@ -23,8 +24,8 @@ public class Main {
     private static CustomerServiceImpl customerServiceImpl;
     private static CarServiceImpl carService;
     private static CarRepositoryImpl carRepositoryImpl;
-    private static FuelType fuelType1;
-    private static VehicleCategory vehicleCategory1;
+    private static FuelType fuelType;
+    private static VehicleCategory vehicleCategory;
 
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
