@@ -1,8 +1,9 @@
-package repository;
+package repository.car;
 
 
 import domain.car.Car;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -18,7 +19,7 @@ public interface CarRepository {
      *
      * @return List<Cars>
      */
-    List<Car> getAll();
+    void getAll() throws IOException, ClassNotFoundException;
 
     /**
      * Adds all cars in the system
@@ -27,7 +28,7 @@ public interface CarRepository {
      */
     void addAll(List<Car> carList);
 
-    void add(Car car);
+    void add(Car car) throws IOException;
 
     /**
      * delete a car from the system
@@ -37,15 +38,25 @@ public interface CarRepository {
     void delete(Car car);
 
     /**
+     * Saves a entry into a file
+     */
+    List<Car> save(List<Car> cars) throws IOException;
+
+    /**
+     * @param filename
+     * @param cars
+     * @return saves a car in a given file
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
+    List readCars(List<Car> cars) throws IOException, ClassNotFoundException;
+
+    /**
      * Updates the current status of cars in the system.
      *
      * @param car
      */
     void updateCars(Car car);
-    /**
-     * Updates car information in the system
-     * @param car
-     */
 
 
 }

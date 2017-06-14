@@ -1,8 +1,8 @@
-package services;
+package services.car;
 
 import domain.car.Car;
 import domain.car.FuelType;
-import repository.CarRepositoryImpl;
+import repository.car.CarRepositoryImpl;
 
 import java.util.Date;
 import java.util.List;
@@ -16,15 +16,13 @@ public class CarServiceImpl implements CarService {
     private List<Car> cars = new CarRepositoryImpl().getCars();
 
     public CarServiceImpl() {
+        this.carRepository = new CarRepositoryImpl();
     }
 
-    public CarServiceImpl(CarRepositoryImpl carRepository) {
-        this.carRepository = carRepository;
-    }
 
     public List<Car> findCarsByBrand(String brand) {
         if (brand.isEmpty()) {
-            System.out.println("one of the parameters are empty string");
+            System.out.println("error");
             return null;
         }
         return carRepository.getCarsByBrand(brand);
@@ -48,12 +46,12 @@ public class CarServiceImpl implements CarService {
         return null;
     }
 
-    public List<Car> findAvailableCars(Date beginDate, Date endDate) {
+    public List<Car> findAvailablePeriod(Date beginDate, Date endDate) {
         if (beginDate.toString().isEmpty() || endDate.toString().isEmpty()) {
             System.out.println("error");
             return null;
         }
-        return carRepository.getAvailableCars(beginDate, endDate);
+        return carRepository.getAvailablePeriod(beginDate, endDate);
     }
 }
 

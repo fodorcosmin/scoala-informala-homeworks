@@ -1,10 +1,12 @@
 package domain.customer;
 
 
+import java.io.Serializable;
+
 /**
  * Created by Cosmin on 5/21/2017.
  */
-public class Customer {
+public class Customer implements Serializable {
 
     /**
      * @param // FIXME: 6/3/2017    ID of the user
@@ -14,29 +16,27 @@ public class Customer {
      * @param // FIXME: 6/3/2017   CustomerServiceImpl Passport
      */
 
-    private int userId;
+
+    private int id;
     private String firstname;
     private String lastname;
     private String email;
     private boolean passport = false;
+    private String telephone;
     private Address address;
 
+    public Customer() {
+    }
 
-    public Customer(int userId, String firstName, String lastName, String email, boolean passport, String streetAddress, String city) {
-        this.userId = this.userId;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.email = this.email;
-        this.passport = this.passport;
-        this.address = address;
+    public Customer(int id, String firstName, String lastName, String email, boolean passport, String telephone, String streetAddress, String city) {
     }
 
     public int getUserid() {
-        return userId;
+        return id;
     }
 
     public void setUserid(int userid) {
-        this.userId = userid;
+        this.id = userid;
     }
 
     public String getFirstname() {
@@ -71,6 +71,14 @@ public class Customer {
         this.passport = passport;
     }
 
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
     public Address getAddress() {
         return address;
     }
@@ -81,17 +89,8 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "\nFirst name='" + firstname + ", Last name='" + lastname + ", Email='" + email;
+        return "" + firstname + "" + lastname + "" + email + "" + telephone;
     }
-
-    //    @Override
-//    public String toString() {
-//        return "UserId=" + userid + "\n" +
-//                "FirstName = " + firstname + "\n" +
-//                "LastName = " + lastname + "\n" +
-//                "Email = " + email + "\n" +
-//                "Passport=" + passport + "\n";
-//    }
 }
 
 

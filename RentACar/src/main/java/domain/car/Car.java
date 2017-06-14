@@ -3,17 +3,17 @@ package domain.car;
  * Created by Fodor Cosmin
  */
 
-import domain.RentalTime;
+import domain.calendar.RentalTime;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Car Class initialisation
  */
-public class Car {
+public class Car implements Serializable {
     List<RentalTime> rentalTimeList;
-    private int carId;
+    private int id;
     private String brand;
     private String model;
     private float size;
@@ -33,8 +33,13 @@ public class Car {
         this.model = model;
     }
 
-    public Car() {
-        this.carId = carId;
+    public Car(int id, List<RentalTime> rentalTimeList) {
+        this.rentalTimeList = rentalTimeList;
+        this.id = id;
+    }
+
+    public Car(int id, String brand, String model, float size, String color, int seats, int doors, boolean ac, boolean gps, GearBox gearBox, FuelType fuelType, VehicleCategory vehicleCategory) {
+        this.id = id;
         this.brand = brand;
         this.model = model;
         this.size = size;
@@ -46,15 +51,14 @@ public class Car {
         this.gearBox = gearBox;
         this.fuelType = fuelType;
         this.vehicleCategory = vehicleCategory;
-        this.rentalTimeList = new ArrayList<RentalTime>();
     }
 
-    public int getCarId() {
-        return carId;
+    public int getId() {
+        return id;
     }
 
-    public void setCarId(int carId) {
-        this.carId = carId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getBrand() {

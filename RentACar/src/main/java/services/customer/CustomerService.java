@@ -1,4 +1,4 @@
-package services;
+package services.customer;
 
 import domain.customer.Customer;
 
@@ -15,13 +15,13 @@ public interface CustomerService {
      * @param firstName
      * @param LastName
      */
-    List<Customer> searchCustomerByFullName(String firstName, String LastName);
+    List<Customer> findCustomerByFullName(String firstName, String LastName);
 
     /**
      * Search customer by given parameters
      *
      * @param id
      */
-    void searchCustomerById(int id);
+    List<Customer> findCustomerById(int id);
 
 }

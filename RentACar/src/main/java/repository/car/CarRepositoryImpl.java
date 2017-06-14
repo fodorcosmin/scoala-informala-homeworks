@@ -1,9 +1,10 @@
-package repository;
+package repository.car;
 
-import domain.RentalTime;
+import domain.calendar.RentalTime;
 import domain.car.Car;
 import domain.car.FuelType;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -19,6 +20,7 @@ public class CarRepositoryImpl implements CarRepository {
     public CarRepositoryImpl() {
         this.cars = new ArrayList<>();
 
+
     }
 
 
@@ -28,7 +30,7 @@ public class CarRepositoryImpl implements CarRepository {
 
 
     public List<Car> getCarsByBrand(String brand) {
-        List<Car> foundCars = new ArrayList<Car>();
+        List<Car> foundCars = new ArrayList<>();
         for (Car car : cars)
 
             if (car.getBrand().equalsIgnoreCase(brand)) {
@@ -44,7 +46,7 @@ public class CarRepositoryImpl implements CarRepository {
 
 
     public List<Car> getCarsByBrandAndModel(String brand, String model) {
-        List<Car> foundCars = new ArrayList<Car>();
+        List<Car> foundCars = new ArrayList<>();
         for (Car car : cars) {
             if ((car.getModel().equalsIgnoreCase(model)) && (car.getBrand().equalsIgnoreCase(brand))) {
                 foundCars.add(car);
@@ -59,7 +61,7 @@ public class CarRepositoryImpl implements CarRepository {
     }
 
     public List<Car> getCarsByMultipleCategories(FuelType fuelType, boolean gps, int seats) {
-        List<Car> foundCars = new ArrayList<Car>();
+        List<Car> foundCars = new ArrayList<>();
 
         for (Car car : cars) {
             if ((car.getFuelType() == fuelType
@@ -76,8 +78,8 @@ public class CarRepositoryImpl implements CarRepository {
     }
 
 
-    public List<Car> getAvailableCars(Date beginDate, Date endDate) {
-        List<Car> foundCars = new ArrayList<Car>();
+    public List<Car> getAvailablePeriod(Date beginDate, Date endDate) {
+        List<Car> foundCars = new ArrayList<>();
 
         for (Car car : cars) {
             boolean isAvailable = true;
@@ -113,16 +115,18 @@ public class CarRepositoryImpl implements CarRepository {
     }
 
 
-    public List<Car> getAll() {
-        return cars;
+    public void getAll() throws IOException, ClassNotFoundException {
+        System.out.println("" + readCars(cars));
     }
 
     public void addAll(List<Car> cars) {
         cars.addAll(cars);
     }
 
-    public void add(Car car) {
+    public void add(Car car) throws IOException {
         cars.add(car);
+        save(cars);
+
     }
 
     public void delete(Car car) {
@@ -130,11 +134,32 @@ public class CarRepositoryImpl implements CarRepository {
 
     }
 
-    public void updateCars(Car car) {
-        cars.set(cars.indexOf(car), car);
-
+    public List<Car> save(List<Car> cars) throws IOException {
+        FileOutputStream fout = new FileOutputStream("cars.txt");
+        ObjectOutputStream oos = new ObjectOutputStream(fout);
+        oos.writeObject(cars);
+        fout.close();
+        return cars;
     }
 
+
+    public List<Car> readCars(List<Car> cars) throws IOException, ClassNotFoundException {
+        FileInputStream fis = new FileInputStream("cars.txt");
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        cars = (List<Car>) ois.readObject();
+        ois.close();
+        return cars;
+    }
+
+    public void updateCars(Car car) {
+        cars.set(cars.indexOf(car), car);
+    }
+
+
+    @Override
+    public String toString() {
+        return "cars = " + cars;
+    }
 }
 
 

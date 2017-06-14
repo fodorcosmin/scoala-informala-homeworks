@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f4d7216-bd17-4f4d-ae79-624476c5742e" name="Default" comment="">
+    <list default="true" id="1f4d7216-bd17-4f4d-ae79-624476c5742e" name="Default" comment="it compiles every 4 tries!">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/domain/transaction/Transaction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/repository/customer/CustomerRepositoryImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/repository/transaction/TransactionRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/repository/transaction/TransactionRepositoryImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/services/transaction/TransactionInterceptorService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/services/transaction/TransactionInterceptorServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/util/PaymentMethod.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/repository/CustomerRepositoryImpl.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/.idea/Model.iml" afterPath="$PROJECT_DIR$/src/main/.idea/Model.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/.idea/misc.xml" afterPath="$PROJECT_DIR$/src/main/.idea/misc.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/.idea/modules.xml" afterPath="$PROJECT_DIR$/src/main/.idea/modules.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/.idea/workspace.xml" afterPath="$PROJECT_DIR$/src/main/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/RentalCalendar.java" afterPath="$PROJECT_DIR$/src/main/java/domain/calendar/RentalCalendar.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/RentalTime.java" afterPath="$PROJECT_DIR$/src/main/java/domain/calendar/RentalTime.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/repository/CarRepository.java" afterPath="$PROJECT_DIR$/src/main/java/repository/car/CarRepository.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/repository/CarRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/repository/car/CarRepositoryImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/repository/CustomerRepository.java" afterPath="$PROJECT_DIR$/src/main/java/repository/customer/CustomerRepository.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/services/CarService.java" afterPath="$PROJECT_DIR$/src/main/java/services/car/CarService.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/services/CarServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/services/car/CarServiceImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/services/CustomerService.java" afterPath="$PROJECT_DIR$/src/main/java/services/customer/CustomerService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/car/Car.java" afterPath="$PROJECT_DIR$/src/main/java/domain/car/Car.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/customer/Customer.java" afterPath="$PROJECT_DIR$/src/main/java/domain/customer/Customer.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,15 +45,14 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="130" column="50" lean-forward="false" selection-start-line="130" selection-start-column="50" selection-end-line="130" selection-end-column="50" />
+            <state relative-caret-position="378">
+              <caret line="83" column="41" lean-forward="true" selection-start-line="83" selection-start-column="41" selection-end-line="83" selection-end-column="41" />
               <folding>
                 <element signature="docComment;class#Main#0" expanded="false" />
                 <element signature="method#mainMenu#0;class#Main#0" expanded="false" />
-                <element signature="method#adminMenu#0;class#Main#0" expanded="false" />
                 <element signature="method#searchMenu#0;class#Main#0" expanded="false" />
                 <element signature="method#rentalMenu#0;class#Main#0" expanded="false" />
-                <element signature="method#searchAvailableCars#0;class#Main#0" expanded="false" />
+                <element signature="method#searchPeriod#0;class#Main#0" expanded="false" />
                 <element signature="method#searchCarsByBrand#0;class#Main#0" expanded="false" />
                 <element signature="method#searchCarsByBrandAndModel#0;class#Main#0" expanded="false" />
                 <element signature="method#searchCarsByMultipleCategories#0;class#Main#0" expanded="false" />
@@ -44,31 +67,77 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CarRepositoryImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/repository/CarRepositoryImpl.java">
+      <file leaf-file-name="CarRepositoryImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/repository/car/CarRepositoryImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+            <state relative-caret-position="192">
+              <caret line="145" column="21" lean-forward="false" selection-start-line="145" selection-start-column="21" selection-end-line="145" selection-end-column="21" />
               <folding>
                 <element signature="method#getCarsByBrand#0;class#CarRepositoryImpl#0" expanded="false" />
                 <element signature="method#getCarsByBrandAndModel#0;class#CarRepositoryImpl#0" expanded="false" />
                 <element signature="method#getCarsByMultipleCategories#0;class#CarRepositoryImpl#0" expanded="false" />
-                <element signature="method#getAvailableCars#0;class#CarRepositoryImpl#0" expanded="false" />
+                <element signature="method#getAvailablePeriod#0;class#CarRepositoryImpl#0" expanded="false" />
+                <element signature="method#save#0;class#CarRepositoryImpl#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CarService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/services/CarService.java">
+      <file leaf-file-name="CustomerRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/repository/customer/CustomerRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="442">
+              <caret line="56" column="46" lean-forward="false" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
               <folding>
-                <element signature="docComment;class#CarService#0" expanded="false" />
-                <element signature="docComment;method#findCarsByBrand#0;class#CarService#0" expanded="false" />
-                <element signature="docComment;method#findCarsByBrandAndModel#0;class#CarService#0" expanded="false" />
-                <element signature="docComment;method#findCarsByMultipleCategories#0;class#CarService#0" expanded="false" />
+                <element signature="docComment;method#add#0;class#CustomerRepository#0" expanded="false" />
+                <element signature="docComment;method#saveCustomers#0;class#CustomerRepository#0" expanded="false" />
+                <element signature="docComment;method#readCustomers#0;class#CustomerRepository#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CarServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/services/car/CarServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+              <folding>
+                <element signature="docComment;class#CarServiceImpl#0" expanded="false" />
+                <element signature="e#430#431#0" expanded="true" />
+                <element signature="e#490#491#0" expanded="true" />
+                <element signature="method#findCarsByBrand#0;class#CarServiceImpl#0" expanded="false" />
+                <element signature="method#findCarsByBrandAndModel#0;class#CarServiceImpl#0" expanded="false" />
+                <element signature="method#findCarsByMultipleCategories#0;class#CarServiceImpl#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TransactionRepositoryImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/repository/transaction/TransactionRepositoryImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+              <folding>
+                <element signature="method#addAll#0;class#TransactionRepositoryImpl#0" expanded="false" />
+                <element signature="method#add#0;class#TransactionRepositoryImpl#0" expanded="false" />
+                <element signature="method#delete#0;class#TransactionRepositoryImpl#0" expanded="false" />
+                <element signature="method#save#0;class#TransactionRepositoryImpl#0" expanded="false" />
+                <element signature="method#read#0;class#TransactionRepositoryImpl#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TransactionRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/repository/transaction/TransactionRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+              <folding>
+                <element signature="docComment;method#save#0;class#TransactionRepository#0" expanded="false" />
+                <element signature="docComment;method#read#0;class#TransactionRepository#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -77,75 +146,57 @@
       <file leaf-file-name="Car.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/domain/car/Car.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1479">
-              <caret line="123" column="49" lean-forward="false" selection-start-line="123" selection-start-column="49" selection-end-line="123" selection-end-column="49" />
+            <state relative-caret-position="-97">
+              <caret line="47" column="27" lean-forward="false" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Customer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/domain/customer/Customer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="847">
+              <caret line="91" column="75" lean-forward="false" selection-start-line="91" selection-start-column="75" selection-end-line="91" selection-end-column="75" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2391#2392#0" expanded="true" />
-                <element signature="e#2461#2462#0" expanded="true" />
-                <element signature="e#2513#2514#0" expanded="true" />
-                <element signature="e#2548#2549#0" expanded="true" />
-                <element signature="e#2578#2579#0" expanded="true" />
-                <element signature="e#2625#2626#0" expanded="true" />
-                <element signature="e#2663#2664#0" expanded="true" />
+                <element signature="docComment;field#id#0;class#Customer#0" expanded="false" />
+                <element signature="e#1937#1938#0" expanded="true" />
+                <element signature="e#2020#2021#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomerRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/repository/CustomerRepository.java">
+      <file leaf-file-name="CustomerRepositoryImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/repository/customer/CustomerRepositoryImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;method#add#0;class#CustomerRepository#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomerRepositoryImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/repository/CustomerRepositoryImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="526">
+              <caret line="49" column="55" lean-forward="false" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="55" />
               <folding>
                 <element signature="docComment;class#CustomerRepositoryImpl#0" expanded="false" />
-                <element signature="e#277#287#0" expanded="true" />
-                <element signature="method#CustomerRepositoryImpl#0;class#CustomerRepositoryImpl#0" expanded="false" />
+                <element signature="e#327#328#0" expanded="true" />
+                <element signature="e#377#378#0" expanded="true" />
+                <element signature="method#add#0;class#CustomerRepositoryImpl#0" expanded="false" />
+                <element signature="method#saveCustomers#0;class#CustomerRepositoryImpl#0" expanded="false" />
                 <element signature="method#delCustomerById#0;class#CustomerRepositoryImpl#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CarServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/services/CarServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <element signature="docComment;class#CarServiceImpl#0" expanded="false" />
-                <element signature="method#findCarsByBrand#0;class#CarServiceImpl#0" expanded="false" />
-                <element signature="method#findCarsByBrandAndModel#0;class#CarServiceImpl#0" expanded="false" />
-                <element signature="method#findCarsByMultipleCategories#0;class#CarServiceImpl#0" expanded="false" />
-                <element signature="method#findAvailableCars#0;class#CarServiceImpl#0" expanded="false" />
+                <element signature="method#getCustomerByFullName#0;class#CustomerRepositoryImpl#0" expanded="false" />
+                <element signature="method#getCustomerById#0;class#CustomerRepositoryImpl#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="CarRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/repository/CarRepository.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/repository/car/CarRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+            <state relative-caret-position="226">
+              <caret line="36" column="7" lean-forward="true" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="docComment;method#getAll#0;class#CarRepository#0" expanded="false" />
+                <element signature="docComment;method#addAll#0;class#CarRepository#0" expanded="false" />
                 <element signature="docComment;method#delete#0;class#CarRepository#0" expanded="false" />
+                <element signature="docComment;method#save#0;class#CarRepository#0" expanded="false" />
+                <element signature="docComment;method#readCars#0;class#CarRepository#0" expanded="false" />
                 <element signature="docComment;method#updateCars#0;class#CarRepository#0" expanded="false" />
               </folding>
             </state>
@@ -157,7 +208,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -203,8 +256,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/customer/CustomerDB.java" />
-        <option value="$PROJECT_DIR$/src/main/java/address/Address.java" />
         <option value="$PROJECT_DIR$/src/main/java/carservice/CarService.java" />
         <option value="$PROJECT_DIR$/src/main/java/carservice/CarServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/Car.java" />
@@ -216,30 +267,56 @@
         <option value="$PROJECT_DIR$/src/main/java/customer/CustomerRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/customer/CustomerRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/customer/CustomerService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/CustomerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/customer/Address.java" />
         <option value="$PROJECT_DIR$/src/main/java/repository/CustomerRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/domain/customer/Customer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/CustomerServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/car/GearBox.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/car/VehicleCategory.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/car/FuelType.java" />
         <option value="$PROJECT_DIR$/src/main/java/repository/CarRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/repository/CustomerRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/domain/car/Car.java" />
-        <option value="$PROJECT_DIR$/src/main/java/repository/CarRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/CarServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/repository/Transaction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/repository/TransactionRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/TransactionInterceptorService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/TransactionInterceptorServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/repository/CarRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/CustomerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/repository/CustomerRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/CustomerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/customer/CustomerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/transaction/TransactionInterceptorService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/transaction/TransactionInterceptorServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/util/RentalTime.java" />
+        <option value="$PROJECT_DIR$/src/main/java/repository/transaction/Transaction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/domain/transaction/Transaction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/customer/CustomerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/repository/transaction/TransactionRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/util/PaymentMethod.java" />
+        <option value="$PROJECT_DIR$/src/main/java/util/RentalCalendar.java" />
+        <option value="$PROJECT_DIR$/src/main/java/domain/car/Car.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/car/CarService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/car/CarServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/domain/RentalCalendar.java" />
+        <option value="$PROJECT_DIR$/src/main/java/domain/calendar/RentalTime.java" />
+        <option value="$PROJECT_DIR$/src/main/java/domain/calendar/RentalCalendar.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/repository/customer/CustomerRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/repository/car/CarRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/repository/car/CarRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/repository/transaction/TransactionRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/customers.txt" />
+        <option value="$PROJECT_DIR$/cars.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/domain/customer/Customer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/repository/customer/CustomerRepositoryImpl.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="47" />
-    <option name="y" value="19" />
-    <option name="width" value="1936" />
-    <option name="height" value="1054" />
+    <option name="width" value="1920" />
+    <option name="height" value="1040" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -255,7 +332,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -307,27 +386,36 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="RentACar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RentACar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="repository" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/rentacar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="SearchEverywhereHistoryKey" value="run&#9;ACTION&#9;ActivateRunToolWindow&#10;terminal&#9;ACTION&#9;ActivateTerminalToolWindow" />
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Cosmin\IdeaProjects\src\main\java\ro\sci\scoala-informala-homeworks\RentACar\src\main" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -341,7 +429,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in RentACar">
+  <component name="RunManager" selected="Application.Main">
+    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="RentACar" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -546,30 +649,14 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="false" name="All in RentACar" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="RentACar" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.All in RentACar" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -592,7 +679,14 @@
       <option name="project" value="LOCAL" />
       <updated>1497362998251</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="it compiles every 4 tries!">
+      <created>1497363030134</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1497363030134</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -613,38 +707,39 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="47" y="19" width="1936" height="1054" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32330826" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5021008" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5021008" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3340494" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35123524" sideWeight="0.49789914" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35123524" sideWeight="0.49789914" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24791667" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39915523" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39849624" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32418162" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -653,27 +748,14 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="is compiles every 4 tries!" />
-    <option name="LAST_COMMIT_MESSAGE" value="is compiles every 4 tries!" />
+    <MESSAGE value="it compiles every 4 tries!" />
+    <option name="LAST_COMMIT_MESSAGE" value="it compiles every 4 tries!" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>165</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>98</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="14" />
+      <option name="time" value="41" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -682,174 +764,31 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/CarRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="method#getCarsByBrand#0;class#CarRepositoryImpl#0" expanded="false" />
-            <element signature="method#getCarsByBrandAndModel#0;class#CarRepositoryImpl#0" expanded="false" />
-            <element signature="method#getCarsByMultipleCategories#0;class#CarRepositoryImpl#0" expanded="false" />
-            <element signature="method#getAvailableCars#0;class#CarRepositoryImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/CarService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#CarService#0" expanded="false" />
-            <element signature="docComment;method#findCarsByBrand#0;class#CarService#0" expanded="false" />
-            <element signature="docComment;method#findCarsByBrandAndModel#0;class#CarService#0" expanded="false" />
-            <element signature="docComment;method#findCarsByMultipleCategories#0;class#CarService#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/car/Car.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="123" column="49" lean-forward="false" selection-start-line="123" selection-start-column="49" selection-end-line="123" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2391#2392#0" expanded="true" />
-            <element signature="e#2461#2462#0" expanded="true" />
-            <element signature="e#2513#2514#0" expanded="true" />
-            <element signature="e#2548#2549#0" expanded="true" />
-            <element signature="e#2578#2579#0" expanded="true" />
-            <element signature="e#2625#2626#0" expanded="true" />
-            <element signature="e#2663#2664#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/CustomerRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#add#0;class#CustomerRepository#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/CustomerRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#CustomerRepositoryImpl#0" expanded="false" />
-            <element signature="e#277#287#0" expanded="true" />
-            <element signature="method#CustomerRepositoryImpl#0;class#CustomerRepositoryImpl#0" expanded="false" />
-            <element signature="method#delCustomerById#0;class#CustomerRepositoryImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/CarServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#CarServiceImpl#0" expanded="false" />
-            <element signature="method#findCarsByBrand#0;class#CarServiceImpl#0" expanded="false" />
-            <element signature="method#findCarsByBrandAndModel#0;class#CarServiceImpl#0" expanded="false" />
-            <element signature="method#findCarsByMultipleCategories#0;class#CarServiceImpl#0" expanded="false" />
-            <element signature="method#findAvailableCars#0;class#CarServiceImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/CarRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#getAll#0;class#CarRepository#0" expanded="false" />
-            <element signature="docComment;method#delete#0;class#CarRepository#0" expanded="false" />
-            <element signature="docComment;method#updateCars#0;class#CarRepository#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="198" column="0" lean-forward="false" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="method#mainMenu#0;class#Main#0" expanded="false" />
-            <element signature="method#adminMenu#0;class#Main#0" expanded="false" />
-            <element signature="method#searchMenu#0;class#Main#0" expanded="false" />
-            <element signature="method#rentalMenu#0;class#Main#0" expanded="false" />
-            <element signature="method#searchAvailableCars#0;class#Main#0" expanded="false" />
-            <element signature="method#searchCarsByBrand#0;class#Main#0" expanded="false" />
-            <element signature="method#searchCarsByBrandAndModel#0;class#Main#0" expanded="false" />
-            <element signature="method#searchCarsByMultipleCategories#0;class#Main#0" expanded="false" />
-            <element signature="method#searchCustomerByName#0;class#Main#0" expanded="false" />
-            <element signature="method#searchCustomerById#0;class#Main#0" expanded="false" />
-            <element signature="method#addACustomer#0;class#Main#0" expanded="false" />
-            <element signature="method#delACustomer#0;class#Main#0" expanded="false" />
-            <element signature="method#addACar#0;class#Main#0" expanded="false" />
-            <element signature="method#delACar#0;class#Main#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/CarRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="method#getCarsByBrand#0;class#CarRepositoryImpl#0" expanded="false" />
-            <element signature="method#getCarsByBrandAndModel#0;class#CarRepositoryImpl#0" expanded="false" />
-            <element signature="method#getCarsByMultipleCategories#0;class#CarRepositoryImpl#0" expanded="false" />
-            <element signature="method#getAvailableCars#0;class#CarRepositoryImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/car/Car.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2391#2392#0" expanded="true" />
-            <element signature="e#2461#2462#0" expanded="true" />
-            <element signature="e#2513#2514#0" expanded="true" />
-            <element signature="e#2548#2549#0" expanded="true" />
-            <element signature="e#2578#2579#0" expanded="true" />
-            <element signature="e#2625#2626#0" expanded="true" />
-            <element signature="e#2663#2664#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/CustomerRepositoryImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/repository/customer/CustomerRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
           <folding>
             <element signature="docComment;class#CustomerRepositoryImpl#0" expanded="false" />
-            <element signature="e#277#287#0" expanded="true" />
-            <element signature="method#CustomerRepositoryImpl#0;class#CustomerRepositoryImpl#0" expanded="false" />
+            <element signature="e#327#328#0" expanded="true" />
+            <element signature="e#377#378#0" expanded="true" />
+            <element signature="method#add#0;class#CustomerRepositoryImpl#0" expanded="false" />
+            <element signature="method#saveCustomers#0;class#CustomerRepositoryImpl#0" expanded="false" />
             <element signature="method#delCustomerById#0;class#CustomerRepositoryImpl#0" expanded="false" />
+            <element signature="method#getCustomerByFullName#0;class#CustomerRepositoryImpl#0" expanded="false" />
+            <element signature="method#getCustomerById#0;class#CustomerRepositoryImpl#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/CustomerRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/repository/customer/CustomerRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;method#add#0;class#CustomerRepository#0" expanded="false" />
+            <element signature="docComment;method#saveCustomers#0;class#CustomerRepository#0" expanded="false" />
+            <element signature="docComment;method#readCustomers#0;class#CustomerRepository#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -858,19 +797,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-          <folding />
+          <folding>
+            <element signature="docComment;field#id#0;class#Customer#0" expanded="false" />
+            <element signature="e#1937#1938#0" expanded="true" />
+            <element signature="e#2020#2021#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/RentalCalendar.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/calendar/RentalCalendar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/CarServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/car/CarServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="73" column="44" lean-forward="false" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
@@ -879,28 +824,35 @@
             <element signature="method#findCarsByBrand#0;class#CarServiceImpl#0" expanded="false" />
             <element signature="method#findCarsByBrandAndModel#0;class#CarServiceImpl#0" expanded="false" />
             <element signature="method#findCarsByMultipleCategories#0;class#CarServiceImpl#0" expanded="false" />
-            <element signature="method#findAvailableCars#0;class#CarServiceImpl#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/RentalTime.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/calendar/RentalTime.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#375#376#0" expanded="false" />
+            <element signature="e#407#408#0" expanded="false" />
+            <element signature="e#455#456#0" expanded="false" />
+            <element signature="e#497#498#0" expanded="false" />
+            <element signature="e#529#530#0" expanded="false" />
+            <element signature="e#559#560#0" expanded="false" />
+            <element signature="e#603#604#0" expanded="false" />
+            <element signature="e#641#642#0" expanded="false" />
+            <element signature="e#687#688#0" expanded="false" />
+            <element signature="e#763#764#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/CustomerServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/customer/CustomerServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#searchCustomerByFullName#0;class#CustomerServiceImpl#0" expanded="false" />
-            <element signature="e#546#556#0" expanded="true" />
-            <element signature="method#searchCustomerById#0;class#CustomerServiceImpl#0" expanded="false" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -912,10 +864,9 @@
           <folding>
             <element signature="docComment;class#Main#0" expanded="false" />
             <element signature="method#mainMenu#0;class#Main#0" expanded="false" />
-            <element signature="method#adminMenu#0;class#Main#0" expanded="false" />
             <element signature="method#searchMenu#0;class#Main#0" expanded="false" />
             <element signature="method#rentalMenu#0;class#Main#0" expanded="false" />
-            <element signature="method#searchAvailableCars#0;class#Main#0" expanded="false" />
+            <element signature="method#searchPeriod#0;class#Main#0" expanded="false" />
             <element signature="method#searchCarsByBrand#0;class#Main#0" expanded="false" />
             <element signature="method#searchCarsByBrandAndModel#0;class#Main#0" expanded="false" />
             <element signature="method#searchCarsByMultipleCategories#0;class#Main#0" expanded="false" />
@@ -929,7 +880,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/CarRepositoryImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/repository/car/CarRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
@@ -937,19 +888,22 @@
             <element signature="method#getCarsByBrand#0;class#CarRepositoryImpl#0" expanded="false" />
             <element signature="method#getCarsByBrandAndModel#0;class#CarRepositoryImpl#0" expanded="false" />
             <element signature="method#getCarsByMultipleCategories#0;class#CarRepositoryImpl#0" expanded="false" />
-            <element signature="method#getAvailableCars#0;class#CarRepositoryImpl#0" expanded="false" />
+            <element signature="method#getAvailablePeriod#0;class#CarRepositoryImpl#0" expanded="false" />
+            <element signature="method#save#0;class#CarRepositoryImpl#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/CarRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/repository/car/CarRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="28" column="19" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;method#getAll#0;class#CarRepository#0" expanded="false" />
+            <element signature="docComment;method#addAll#0;class#CarRepository#0" expanded="false" />
             <element signature="docComment;method#delete#0;class#CarRepository#0" expanded="false" />
+            <element signature="docComment;method#save#0;class#CarRepository#0" expanded="false" />
+            <element signature="docComment;method#readCars#0;class#CarRepository#0" expanded="false" />
             <element signature="docComment;method#updateCars#0;class#CarRepository#0" expanded="false" />
           </folding>
         </state>
@@ -959,69 +913,75 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="32" column="213" lean-forward="false" selection-start-line="32" selection-start-column="213" selection-end-line="32" selection-end-column="213" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2391#2392#0" expanded="true" />
-            <element signature="e#2461#2462#0" expanded="true" />
-            <element signature="e#2513#2514#0" expanded="true" />
-            <element signature="e#2548#2549#0" expanded="true" />
-            <element signature="e#2578#2579#0" expanded="true" />
-            <element signature="e#2625#2626#0" expanded="true" />
-            <element signature="e#2663#2664#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/CustomerRepositoryImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/repository/customer/CustomerRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
           <folding>
             <element signature="docComment;class#CustomerRepositoryImpl#0" expanded="false" />
-            <element signature="e#277#287#0" expanded="true" />
-            <element signature="method#CustomerRepositoryImpl#0;class#CustomerRepositoryImpl#0" expanded="false" />
+            <element signature="e#327#328#0" expanded="true" />
+            <element signature="e#377#378#0" expanded="true" />
+            <element signature="method#add#0;class#CustomerRepositoryImpl#0" expanded="false" />
+            <element signature="method#saveCustomers#0;class#CustomerRepositoryImpl#0" expanded="false" />
             <element signature="method#delCustomerById#0;class#CustomerRepositoryImpl#0" expanded="false" />
+            <element signature="method#getCustomerByFullName#0;class#CustomerRepositoryImpl#0" expanded="false" />
+            <element signature="method#getCustomerById#0;class#CustomerRepositoryImpl#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/CustomerServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/customer/CustomerServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#searchCustomerByFullName#0;class#CustomerServiceImpl#0" expanded="false" />
-            <element signature="e#546#556#0" expanded="true" />
-            <element signature="method#searchCustomerById#0;class#CustomerServiceImpl#0" expanded="false" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/CustomerRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/repository/customer/CustomerRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="8" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;method#add#0;class#CustomerRepository#0" expanded="false" />
+            <element signature="docComment;method#saveCustomers#0;class#CustomerRepository#0" expanded="false" />
+            <element signature="docComment;method#readCustomers#0;class#CustomerRepository#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/RentalCalendar.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/calendar/RentalCalendar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/RentalTime.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/calendar/RentalTime.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#375#376#0" expanded="false" />
+            <element signature="e#407#408#0" expanded="false" />
+            <element signature="e#455#456#0" expanded="false" />
+            <element signature="e#497#498#0" expanded="false" />
+            <element signature="e#529#530#0" expanded="false" />
+            <element signature="e#559#560#0" expanded="false" />
+            <element signature="e#603#604#0" expanded="false" />
+            <element signature="e#641#642#0" expanded="false" />
+            <element signature="e#687#688#0" expanded="false" />
+            <element signature="e#763#764#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1029,7 +989,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="6" selection-end-column="15" />
-          <folding />
+          <folding>
+            <element signature="docComment;field#id#0;class#Customer#0" expanded="false" />
+            <element signature="e#1937#1938#0" expanded="true" />
+            <element signature="e#2020#2021#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1040,10 +1004,9 @@
           <folding>
             <element signature="docComment;class#Main#0" expanded="false" />
             <element signature="method#mainMenu#0;class#Main#0" expanded="false" />
-            <element signature="method#adminMenu#0;class#Main#0" expanded="false" />
             <element signature="method#searchMenu#0;class#Main#0" expanded="false" />
             <element signature="method#rentalMenu#0;class#Main#0" expanded="false" />
-            <element signature="method#searchAvailableCars#0;class#Main#0" expanded="false" />
+            <element signature="method#searchPeriod#0;class#Main#0" expanded="false" />
             <element signature="method#searchCarsByBrand#0;class#Main#0" expanded="false" />
             <element signature="method#searchCarsByBrandAndModel#0;class#Main#0" expanded="false" />
             <element signature="method#searchCarsByMultipleCategories#0;class#Main#0" expanded="false" />
@@ -1057,7 +1020,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/CarService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/car/CarService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
@@ -1070,7 +1033,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/CarRepositoryImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/repository/car/CarRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
@@ -1078,93 +1041,18 @@
             <element signature="method#getCarsByBrand#0;class#CarRepositoryImpl#0" expanded="false" />
             <element signature="method#getCarsByBrandAndModel#0;class#CarRepositoryImpl#0" expanded="false" />
             <element signature="method#getCarsByMultipleCategories#0;class#CarRepositoryImpl#0" expanded="false" />
-            <element signature="method#getAvailableCars#0;class#CarRepositoryImpl#0" expanded="false" />
+            <element signature="method#getAvailablePeriod#0;class#CarRepositoryImpl#0" expanded="false" />
+            <element signature="method#save#0;class#CarRepositoryImpl#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/RentalTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/util/Login.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/CustomerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="docComment;method#searchCustomerByFullName#0;class#CustomerService#0" expanded="false" />
-            <element signature="docComment;method#searchCustomerById#0;class#CustomerService#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/domain/car/VehicleCategory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="40" lean-forward="false" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/car/FuelType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/car/GearBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding>
-            <element signature="docComment;class#GearBox#0" expanded="false" />
-            <element signature="method#search#0;class#GearBox#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/customer/Address.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/customer/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="35" lean-forward="false" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/RentalCalendar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/CustomerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#searchCustomerByFullName#0;class#CustomerServiceImpl#0" expanded="false" />
-            <element signature="e#546#556#0" expanded="true" />
-            <element signature="method#searchCustomerById#0;class#CustomerServiceImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1189,34 +1077,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/CustomerRepositoryImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/car/GearBox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="119">
+          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding>
-            <element signature="docComment;class#CustomerRepositoryImpl#0" expanded="false" />
-            <element signature="e#277#287#0" expanded="true" />
-            <element signature="method#CustomerRepositoryImpl#0;class#CustomerRepositoryImpl#0" expanded="false" />
-            <element signature="method#delCustomerById#0;class#CustomerRepositoryImpl#0" expanded="false" />
+            <element signature="docComment;class#GearBox#0" expanded="false" />
+            <element signature="method#search#0;class#GearBox#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/CustomerRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/customer/CustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding>
+            <element signature="docComment;method#findCustomerByFullName#0;class#CustomerService#0" expanded="false" />
+            <element signature="docComment;method#findCustomerById#0;class#CustomerService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/customer/CustomerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/transaction/TransactionInterceptorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/transaction/TransactionInterceptorServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/car/FuelType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <caret line="15" column="13" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/PaymentMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#add#0;class#CustomerRepository#0" expanded="false" />
+            <element signature="method#searchEnum#0;class#PaymentMethod#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/CarService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/car/CarService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="374">
+          <caret line="43" column="33" lean-forward="false" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
           <folding>
             <element signature="docComment;class#CarService#0" expanded="false" />
             <element signature="docComment;method#findCarsByBrand#0;class#CarService#0" expanded="false" />
@@ -1226,48 +1157,191 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/car/Car.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/customer/Address.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="123" column="49" lean-forward="false" selection-start-line="123" selection-start-column="49" selection-end-line="123" selection-end-column="49" />
+        <state relative-caret-position="85">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2391#2392#0" expanded="true" />
-            <element signature="e#2461#2462#0" expanded="true" />
-            <element signature="e#2513#2514#0" expanded="true" />
-            <element signature="e#2548#2549#0" expanded="true" />
-            <element signature="e#2578#2579#0" expanded="true" />
-            <element signature="e#2625#2626#0" expanded="true" />
-            <element signature="e#2663#2664#0" expanded="true" />
+            <element signature="e#323#324#0" expanded="false" />
+            <element signature="e#359#360#0" expanded="false" />
+            <element signature="e#417#418#0" expanded="false" />
+            <element signature="e#467#468#0" expanded="false" />
+            <element signature="e#498#499#0" expanded="false" />
+            <element signature="e#525#526#0" expanded="false" />
+            <element signature="e#565#566#0" expanded="false" />
+            <element signature="e#597#598#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/CarServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/calendar/RentalTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="e#375#376#0" expanded="false" />
+            <element signature="e#407#408#0" expanded="false" />
+            <element signature="e#455#456#0" expanded="false" />
+            <element signature="e#497#498#0" expanded="false" />
+            <element signature="e#529#530#0" expanded="false" />
+            <element signature="e#559#560#0" expanded="false" />
+            <element signature="e#603#604#0" expanded="false" />
+            <element signature="e#641#642#0" expanded="false" />
+            <element signature="e#687#688#0" expanded="false" />
+            <element signature="e#763#764#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/calendar/RentalCalendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/ObjectInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="856" column="0" lean-forward="false" selection-start-line="856" selection-start-column="0" selection-end-line="856" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/transaction/Transaction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <caret line="22" column="24" lean-forward="false" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+          <folding>
+            <element signature="e#489#490#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cars.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/repository/transaction/TransactionRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding>
+            <element signature="docComment;method#save#0;class#TransactionRepository#0" expanded="false" />
+            <element signature="docComment;method#read#0;class#TransactionRepository#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customers.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="34" lean-forward="false" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/repository/transaction/TransactionRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="method#addAll#0;class#TransactionRepositoryImpl#0" expanded="false" />
+            <element signature="method#add#0;class#TransactionRepositoryImpl#0" expanded="false" />
+            <element signature="method#delete#0;class#TransactionRepositoryImpl#0" expanded="false" />
+            <element signature="method#save#0;class#TransactionRepositoryImpl#0" expanded="false" />
+            <element signature="method#read#0;class#TransactionRepositoryImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/customer/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="847">
+          <caret line="91" column="75" lean-forward="false" selection-start-line="91" selection-start-column="75" selection-end-line="91" selection-end-column="75" />
+          <folding>
+            <element signature="docComment;field#id#0;class#Customer#0" expanded="false" />
+            <element signature="e#1937#1938#0" expanded="true" />
+            <element signature="e#2020#2021#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/car/CarServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
           <folding>
             <element signature="docComment;class#CarServiceImpl#0" expanded="false" />
+            <element signature="e#430#431#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
             <element signature="method#findCarsByBrand#0;class#CarServiceImpl#0" expanded="false" />
             <element signature="method#findCarsByBrandAndModel#0;class#CarServiceImpl#0" expanded="false" />
             <element signature="method#findCarsByMultipleCategories#0;class#CarServiceImpl#0" expanded="false" />
-            <element signature="method#findAvailableCars#0;class#CarServiceImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/car/Car.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-97">
+          <caret line="47" column="27" lean-forward="false" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/repository/car/CarRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="36" column="7" lean-forward="true" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
+          <folding>
+            <element signature="docComment;method#getAll#0;class#CarRepository#0" expanded="false" />
+            <element signature="docComment;method#addAll#0;class#CarRepository#0" expanded="false" />
+            <element signature="docComment;method#delete#0;class#CarRepository#0" expanded="false" />
+            <element signature="docComment;method#save#0;class#CarRepository#0" expanded="false" />
+            <element signature="docComment;method#readCars#0;class#CarRepository#0" expanded="false" />
+            <element signature="docComment;method#updateCars#0;class#CarRepository#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/repository/customer/CustomerRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="56" column="46" lean-forward="false" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+          <folding>
+            <element signature="docComment;method#add#0;class#CustomerRepository#0" expanded="false" />
+            <element signature="docComment;method#saveCustomers#0;class#CustomerRepository#0" expanded="false" />
+            <element signature="docComment;method#readCustomers#0;class#CustomerRepository#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="130" column="50" lean-forward="false" selection-start-line="130" selection-start-column="50" selection-end-line="130" selection-end-column="50" />
+        <state relative-caret-position="378">
+          <caret line="83" column="41" lean-forward="true" selection-start-line="83" selection-start-column="41" selection-end-line="83" selection-end-column="41" />
           <folding>
             <element signature="docComment;class#Main#0" expanded="false" />
             <element signature="method#mainMenu#0;class#Main#0" expanded="false" />
-            <element signature="method#adminMenu#0;class#Main#0" expanded="false" />
             <element signature="method#searchMenu#0;class#Main#0" expanded="false" />
             <element signature="method#rentalMenu#0;class#Main#0" expanded="false" />
-            <element signature="method#searchAvailableCars#0;class#Main#0" expanded="false" />
+            <element signature="method#searchPeriod#0;class#Main#0" expanded="false" />
             <element signature="method#searchCarsByBrand#0;class#Main#0" expanded="false" />
             <element signature="method#searchCarsByBrandAndModel#0;class#Main#0" expanded="false" />
             <element signature="method#searchCarsByMultipleCategories#0;class#Main#0" expanded="false" />
@@ -1281,28 +1355,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/CarRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/repository/car/CarRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#getAll#0;class#CarRepository#0" expanded="false" />
-            <element signature="docComment;method#delete#0;class#CarRepository#0" expanded="false" />
-            <element signature="docComment;method#updateCars#0;class#CarRepository#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/CarRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        <state relative-caret-position="192">
+          <caret line="145" column="21" lean-forward="false" selection-start-line="145" selection-start-column="21" selection-end-line="145" selection-end-column="21" />
           <folding>
             <element signature="method#getCarsByBrand#0;class#CarRepositoryImpl#0" expanded="false" />
             <element signature="method#getCarsByBrandAndModel#0;class#CarRepositoryImpl#0" expanded="false" />
             <element signature="method#getCarsByMultipleCategories#0;class#CarRepositoryImpl#0" expanded="false" />
-            <element signature="method#getAvailableCars#0;class#CarRepositoryImpl#0" expanded="false" />
+            <element signature="method#getAvailablePeriod#0;class#CarRepositoryImpl#0" expanded="false" />
+            <element signature="method#save#0;class#CarRepositoryImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/repository/customer/CustomerRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="49" column="55" lean-forward="false" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="55" />
+          <folding>
+            <element signature="docComment;class#CustomerRepositoryImpl#0" expanded="false" />
+            <element signature="e#327#328#0" expanded="true" />
+            <element signature="e#377#378#0" expanded="true" />
+            <element signature="method#add#0;class#CustomerRepositoryImpl#0" expanded="false" />
+            <element signature="method#saveCustomers#0;class#CustomerRepositoryImpl#0" expanded="false" />
+            <element signature="method#delCustomerById#0;class#CustomerRepositoryImpl#0" expanded="false" />
+            <element signature="method#getCustomerByFullName#0;class#CustomerRepositoryImpl#0" expanded="false" />
+            <element signature="method#getCustomerById#0;class#CustomerRepositoryImpl#0" expanded="false" />
           </folding>
         </state>
       </provider>

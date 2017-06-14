@@ -1,4 +1,4 @@
-package services;
+package services.car;
 
 import domain.car.Car;
 import domain.car.FuelType;
@@ -41,6 +41,6 @@ public interface CarService {
      * @param endDate
      * @return
      */
-    List<Car> findAvailableCars(Date beginDate, Date endDate);
+    List<Car> findAvailablePeriod(Date beginDate, Date endDate);
 }
 
