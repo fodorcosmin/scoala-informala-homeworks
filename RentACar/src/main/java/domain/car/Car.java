@@ -3,7 +3,6 @@ package domain.car;
  * Created by Fodor Cosmin
  */
 
-import domain.calendar.RentalCalendar;
 import domain.calendar.RentalTime;
 
 import java.io.Serializable;
@@ -34,7 +33,7 @@ public class Car implements Serializable {
         this.model = model;
     }
 
-    public Car(int id) {
+    public Car(int id, List<RentalTime> rentalTimeList) {
         this.id = id;
         this.rentalTimeList = rentalTimeList;
     }

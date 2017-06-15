@@ -1,8 +1,9 @@
 package domain.calendar;
 
-import domain.car.Car;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Fodor Cosmin on 5/31/2017.
@@ -10,14 +11,6 @@ import java.util.*;
  */
 public class RentalCalendar {
     private List<RentalTime> rentalTimes;
-
-    public List<RentalTime> getRentalTimes() {
-        return rentalTimes;
-    }
-
-    public void setRentalTimes(List<RentalTime> rentalTimes) {
-        this.rentalTimes = rentalTimes;
-    }
 
     public RentalCalendar()  {
 
@@ -35,7 +28,15 @@ public class RentalCalendar {
         Date endDate = calendar.getTime();
         firstCalendar.add(new RentalTime(beginDate, endDate));
 
-        //TODO perhaps concatenate lists ??!? //
+        //TODO perhaps copy lists ??!? //
+    }
+
+    public List<RentalTime> getRentalTimes() {
+        return rentalTimes;
+    }
+
+    public void setRentalTimes(List<RentalTime> rentalTimes) {
+        this.rentalTimes = rentalTimes;
     }
 
     public void checkCarsPeriod() {
