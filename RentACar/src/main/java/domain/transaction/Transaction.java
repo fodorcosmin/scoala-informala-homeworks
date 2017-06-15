@@ -1,8 +1,11 @@
 package domain.transaction;
 
+import domain.calendar.RentalCalendar;
 import domain.calendar.RentalTime;
 import domain.car.Car;
 import domain.customer.Customer;
+import repository.car.CarRepositoryImpl;
+import repository.customer.CustomerRepositoryImpl;
 
 import java.io.Serializable;
 import java.util.List;
@@ -11,14 +14,19 @@ import java.util.List;
  * Created by Cosmin on 6/14/2017.
  */
 public class Transaction implements Serializable {
-
     private int id;
     private List<RentalTime> rentalTimeList;
     private List<Customer> customerList;
     private List<Car> carList;
 
+
     public Transaction() {
+        this.rentalTimeList = new RentalCalendar().getRentalTimes();
+        this.customerList = new CustomerRepositoryImpl().getCustomers();
+        this.carList = new CarRepositoryImpl().getCars();
+
     }
+
 
     public int getId() {
         return id;
@@ -51,4 +59,6 @@ public class Transaction implements Serializable {
     public void setCarList(List<Car> carList) {
         this.carList = carList;
     }
+
+
 }
