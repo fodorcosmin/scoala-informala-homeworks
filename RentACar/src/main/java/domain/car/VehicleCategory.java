@@ -1,4 +1,4 @@
-package util;
+package domain.car;
 /**
  * Created by Cosmin on 5/26/2017.
  */
@@ -11,7 +11,7 @@ public enum VehicleCategory {
     SPORT, SEDAN, HATCHBACK, LIMOUSINE,;
 
     // Iterating through enum //
-    public static VehicleCategory search1(String test) {
+    public static VehicleCategory search(String test) {
         for (VehicleCategory vehicle : VehicleCategory.values()) {
             if (vehicle.name().equals(test)) {
                 return vehicle;

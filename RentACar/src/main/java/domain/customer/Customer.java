@@ -1,39 +1,42 @@
-package customer;
+package domain.customer;
+
+
+import java.io.Serializable;
 
 /**
  * Created by Cosmin on 5/21/2017.
  */
-public class CustomerImpl {
+public class Customer implements Serializable {
 
     /**
      * @param // FIXME: 6/3/2017    ID of the user
      * @param // FIXME: 6/3/2017  First name of the user
      * @param // FIXME: 6/3/2017   Last name of the user
-     * @param // FIXME: 6/3/2017      CustomerImpl email
-     * @param // FIXME: 6/3/2017   CustomerImpl Passport
+     * @param // FIXME: 6/3/2017      CustomerServiceImpl email
+     * @param // FIXME: 6/3/2017   CustomerServiceImpl Passport
      */
 
 
-    private int userid;
+    private int id;
     private String firstname;
     private String lastname;
     private String email;
     private boolean passport = false;
+    private String telephone;
+    private Address address;
 
-    public CustomerImpl(int userid, String firstname, String lastname, String email, boolean passport) {
-        this.userid = userid;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.email = email;
-        this.passport = passport;
+    public Customer() {
+    }
+
+    public Customer(int id, String firstName, String lastName, String email, boolean passport, String telephone, String streetAddress, String city) {
     }
 
     public int getUserid() {
-        return userid;
+        return id;
     }
 
     public void setUserid(int userid) {
-        this.userid = userid;
+        this.id = userid;
     }
 
     public String getFirstname() {
@@ -68,19 +71,26 @@ public class CustomerImpl {
         this.passport = passport;
     }
 
-    @Override
-    public String toString() {
-        return "\nFirst name='" + firstname + ", Last name='" + lastname + ", Email='" + email;
+    public String getTelephone() {
+        return telephone;
     }
 
-    //    @Override
-//    public String toString() {
-//        return "UserId=" + userid + "\n" +
-//                "FirstName = " + firstname + "\n" +
-//                "LastName = " + lastname + "\n" +
-//                "Email = " + email + "\n" +
-//                "Passport=" + passport + "\n";
-//    }
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "" + firstname + "" + lastname + "" + email + "" + telephone;
+    }
 }
 
 
