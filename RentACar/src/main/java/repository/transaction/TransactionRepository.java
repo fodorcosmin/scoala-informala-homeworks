@@ -13,7 +13,7 @@ public interface TransactionRepository {
     /**
      * Get all
      */
-    List<Transaction> getAll();
+    void getAll() throws IOException, ClassNotFoundException;
 
     /**
      * Get by
@@ -45,12 +45,12 @@ public interface TransactionRepository {
      * @return saves the transactions in a given filename
      * @throws IOException
      */
-    void save(String filename) throws IOException;
+    List<Transaction> saveTransactions(List<Transaction> transactions) throws IOException;
 
     /**
      * @param filename
      * @return reads from the given filename
      * @throws IOException
      */
-    void read(String filename) throws IOException, ClassNotFoundException;
+    List<Transaction> readTransactions(List<Transaction> transactions) throws IOException, ClassNotFoundException;
 }

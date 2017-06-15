@@ -3,6 +3,7 @@ package domain.car;
  * Created by Fodor Cosmin
  */
 
+import domain.calendar.RentalCalendar;
 import domain.calendar.RentalTime;
 
 import java.io.Serializable;
@@ -12,8 +13,8 @@ import java.util.List;
  * Car Class initialisation
  */
 public class Car implements Serializable {
-    List<RentalTime> rentalTimeList;
     private int id;
+    private List<RentalTime> rentalTimeList;
     private String brand;
     private String model;
     private float size;
@@ -33,9 +34,9 @@ public class Car implements Serializable {
         this.model = model;
     }
 
-    public Car(int id, List<RentalTime> rentalTimeList) {
-        this.rentalTimeList = rentalTimeList;
+    public Car(int id) {
         this.id = id;
+        this.rentalTimeList = rentalTimeList;
     }
 
     public Car(int id, String brand, String model, float size, String color, int seats, int doors, boolean ac, boolean gps, GearBox gearBox, FuelType fuelType, VehicleCategory vehicleCategory) {
@@ -53,8 +54,10 @@ public class Car implements Serializable {
         this.vehicleCategory = vehicleCategory;
     }
 
-    public int getId() {
-        return id;
+
+
+    public int getId(int id) {
+        return this.id;
     }
 
     public void setId(int id) {
@@ -160,7 +163,7 @@ public class Car implements Serializable {
 
     @Override
     public String toString() {
-        return "" + brand + " " + model;
+        return " "  + id  + " " + brand + " " + model;
     }
 
 }

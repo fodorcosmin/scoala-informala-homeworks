@@ -1,3 +1,4 @@
+import domain.calendar.RentalCalendar;
 import domain.car.Car;
 import domain.car.FuelType;
 import domain.car.GearBox;
@@ -26,6 +27,7 @@ public class Main {
     private static CarRepositoryImpl carRepositoryImpl;
     private static FuelType fuelType;
     private static VehicleCategory vehicleCategory;
+    private static RentalCalendar rentalCalendar;
 
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
@@ -33,6 +35,7 @@ public class Main {
         customerServiceImpl = new CustomerServiceImpl();
         carRepositoryImpl = new CarRepositoryImpl();
         carService = new CarServiceImpl();
+        rentalCalendar = new RentalCalendar();
         Scanner input = new Scanner(System.in);
         mainMenu(input);
     }
@@ -58,6 +61,7 @@ public class Main {
                 rentalMenu(input);
                 break;
             case 4:
+                System.out.println("BYE!");
                 System.exit(0);
                 break;
         }
@@ -142,8 +146,8 @@ public class Main {
     }
 
     private static void rentalMenu(Scanner input) throws IOException, ClassNotFoundException {
-        System.out.println("1.Search available cars :");
-        System.out.println("2.Calculate price per day:");
+        System.out.println("1.Enter period:");
+        System.out.println("2.testing:");
         System.out.println("3.Exit to main menu:");
 
         int option = input.nextInt();
@@ -152,7 +156,7 @@ public class Main {
                 searchPeriod(input);
                 break;
             case 2:
-                mainMenu(input); //TODO
+                rentalCalendar.checkCarsPeriod();
             case 3:
                 mainMenu(input);
 

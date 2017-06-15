@@ -4,8 +4,7 @@ package repository.transaction;
 import domain.transaction.Transaction;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by  Fodor Cosmin on 6/13/2017.
@@ -13,15 +12,14 @@ import java.util.List;
 
 public class TransactionRepositoryImpl implements TransactionRepository {
 
+    private List<Transaction> transactions;
+    private HashMap<Transaction,Date> hm = new HashMap<Transaction,Date>();
 
-    private List<Transaction> transactionList = new ArrayList<>();
 
-    public List<Transaction> getAll() {
-        return transactionList;
+    public void getAll() throws IOException, ClassNotFoundException {
+        System.out.println("" + readTransactions(transactions));
     }
-
     public void addAll(List<Transaction> transactions) {
-
     }
 
     public void add(Transaction transaction) {
@@ -40,18 +38,20 @@ public class TransactionRepositoryImpl implements TransactionRepository {
         return null;
     }
 
-    public void save(String transactionList) throws IOException {
+    public List<Transaction> saveTransactions(List<Transaction> transactions) throws IOException {
         FileOutputStream fout = new FileOutputStream("transactions.txt");
         ObjectOutputStream oos = new ObjectOutputStream(fout);
-        oos.writeObject(transactionList);
+        oos.writeObject(transactions);
         fout.close();
+        return transactions;
     }
 
 
-    public void read(String transactions) throws IOException, ClassNotFoundException {
+    public List<Transaction> readTransactions(List<Transaction> transactions) throws IOException, ClassNotFoundException {
         FileInputStream fis = new FileInputStream("transactions.txt");
         ObjectInputStream ois = new ObjectInputStream(fis);
-        transactionList = (List<Transaction>) ois.readObject();
+        transactions = (List<Transaction>) ois.readObject();
         ois.close();
+        return transactions;
     }
 }

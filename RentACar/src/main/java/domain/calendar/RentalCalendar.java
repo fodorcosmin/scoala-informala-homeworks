@@ -1,6 +1,5 @@
 package domain.calendar;
 
-
 import domain.car.Car;
 
 import java.util.*;
@@ -10,38 +9,39 @@ import java.util.*;
  * //TODO Implement a hashmap that contains an ID of the car and a LIST<RentalTime> and lookup for every car by the id in the map //
  */
 public class RentalCalendar {
+    private List<RentalTime> rentalTimes;
 
-    private Car car;
-    private List<RentalTime> rentalTimeList;
-    private HashMap<Integer, List<RentalTime>> carRentalHashMap;
+    public List<RentalTime> getRentalTimes() {
+        return rentalTimes;
+    }
+
+    public void setRentalTimes(List<RentalTime> rentalTimes) {
+        this.rentalTimes = rentalTimes;
+    }
+
+    public RentalCalendar()  {
 
 
+        // Cars that are *NOT* available *Maintenance or RENTED*  //
 
-
-    public RentalCalendar() {
-
-
+        List<RentalTime> firstCalendar = new ArrayList<RentalTime>();
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.YEAR, 2017);
-        calendar.set(Calendar.MONTH, 0);
-        calendar.set(Calendar.DAY_OF_MONTH, 1);
-
-
-        // Cars that are *NOT* available *RENTED*  //
-        List<RentalTime> firstCalendar = new ArrayList<RentalTime>();
-        calendar.set(Calendar.MONTH, 10);
-        calendar.set(Calendar.DAY_OF_WEEK, 6);
+        calendar.set(Calendar.NOVEMBER, 25);
+        calendar.set(Calendar.HOUR_OF_DAY, 10);
         Date beginDate = calendar.getTime();
-        calendar.set(Calendar.MONTH, 11);
-        calendar.set(Calendar.DAY_OF_WEEK, 7);
+        calendar.set(Calendar.NOVEMBER, 30);
+        calendar.set(Calendar.HOUR_OF_DAY, 24);
         Date endDate = calendar.getTime();
         firstCalendar.add(new RentalTime(beginDate, endDate));
 
+        //TODO perhaps concatenate lists ??!? //
+    }
 
-        carRentalHashMap.put(car.getId(), firstCalendar);
-
+    public void checkCarsPeriod() {
 
 
     }
 
 }
+
