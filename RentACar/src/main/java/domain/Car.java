@@ -1,19 +1,19 @@
-package domain.car;
+package domain;
 /**
  * Created by Fodor Cosmin
  */
 
-import domain.calendar.RentalTime;
+import util.FuelType;
+import util.VehicleCategory;
 
-import java.io.Serializable;
 import java.util.List;
+
 
 /**
  * Car Class initialisation
  */
-public class Car implements Serializable {
-    List<RentalTime> rentalTimeList;
-    private int id;
+public class Car {
+    private int carid;
     private String brand;
     private String model;
     private float size;
@@ -22,24 +22,17 @@ public class Car implements Serializable {
     private int doors;
     private boolean ac = false;
     private boolean gps = false;
-    private GearBox gearBox;
+    private boolean gearbox = false; //TRUE automatic, FALSE manual
     private FuelType fuelType;
     private VehicleCategory vehicleCategory;
+    private List<RentalTime> rentalTimeList;
+    private int priceperday;
+
     // constructor
 
 
-    public Car(String brand, String model) {
-        this.brand = brand;
-        this.model = model;
-    }
-
-    public Car(int id, List<RentalTime> rentalTimeList) {
-        this.rentalTimeList = rentalTimeList;
-        this.id = id;
-    }
-
-    public Car(int id, String brand, String model, float size, String color, int seats, int doors, boolean ac, boolean gps, GearBox gearBox, FuelType fuelType, VehicleCategory vehicleCategory) {
-        this.id = id;
+    public Car(int carid, String brand, String model, float size, String color, int seats, int doors, boolean ac, boolean gps, boolean gearbox, FuelType fuelType, VehicleCategory vehicleCategory, List<RentalTime> rentalTimeList, int priceperday) {
+        this.carid = carid;
         this.brand = brand;
         this.model = model;
         this.size = size;
@@ -48,24 +41,18 @@ public class Car implements Serializable {
         this.doors = doors;
         this.ac = ac;
         this.gps = gps;
-        this.gearBox = gearBox;
+        this.gearbox = gearbox;
         this.fuelType = fuelType;
         this.vehicleCategory = vehicleCategory;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        this.rentalTimeList = rentalTimeList;
+        this.priceperday = priceperday;
     }
 
     public String getBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
+    public void setBrand(String make) {
         this.brand = brand;
     }
 
@@ -125,20 +112,12 @@ public class Car implements Serializable {
         this.gps = gps;
     }
 
-    public List<RentalTime> getRentalTimeList() {
-        return rentalTimeList;
+    public boolean isGearbox() {
+        return gearbox;
     }
 
-    public void setRentalTimeList(List<RentalTime> rentalTimeList) {
-        this.rentalTimeList = rentalTimeList;
-    }
-
-    public GearBox getGearBox() {
-        return gearBox;
-    }
-
-    public void setGearBox(GearBox gearBox) {
-        this.gearBox = gearBox;
+    public void setGearbox(boolean gearbox) {
+        this.gearbox = gearbox;
     }
 
     public FuelType getFuelType() {
@@ -157,11 +136,26 @@ public class Car implements Serializable {
         this.vehicleCategory = vehicleCategory;
     }
 
+    public List<RentalTime> getRentalTimeList() {
+        return rentalTimeList;
+    }
+
+
+    public int getPriceperday() {
+        return priceperday;
+    }
+
+    public void setPriceperday(int priceperday) {
+        this.priceperday = priceperday;
+    }
 
     @Override
     public String toString() {
         return "" + brand + " " + model;
     }
 
+    public void setRentalTimeList(List<RentalTime> rentalTimeList) {
+        this.rentalTimeList = rentalTimeList;
+    }
 }
 

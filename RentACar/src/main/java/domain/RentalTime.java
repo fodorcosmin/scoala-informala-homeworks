@@ -1,4 +1,4 @@
-package domain.calendar;
+package domain;
 
 import java.util.Date;
 

@@ -1,21 +1,16 @@
-package domain.calendar;
+package domain;
 
-
-import domain.car.Car;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Fodor Cosmin on 5/31/2017.
  * //TODO Implement a hashmap that contains an ID of the car and a LIST<RentalTime> and lookup for every car by the id in the map //
  */
 public class RentalCalendar {
-
-    private Car car;
-    private List<RentalTime> rentalTimeList;
-    private HashMap<Integer, List<RentalTime>> carRentalHashMap;
-
-
+    public List<RentalTime> rentalTimeList;
 
 
     public RentalCalendar() {
@@ -37,11 +32,7 @@ public class RentalCalendar {
         Date endDate = calendar.getTime();
         firstCalendar.add(new RentalTime(beginDate, endDate));
 
-
-        carRentalHashMap.put(car.getId(), firstCalendar);
-
-
-
+        rentalTimeList = firstCalendar;
     }
 
 }

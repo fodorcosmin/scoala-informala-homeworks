@@ -1,4 +1,4 @@
-package domain.customer;
+package address;
 
 /**
  * Created by Cosmin on 5/26/2017.
@@ -9,23 +9,6 @@ public class Address {
 
     public Address(String streetAddress, String city) {
         this.streetAddress = streetAddress;
-        this.city = city;
-
-    }
-
-    public String getStreetAddress() {
-        return streetAddress;
-    }
-
-    public void setStreetAddress(String streetAddress) {
-        this.streetAddress = streetAddress;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
         this.city = city;
     }
 
