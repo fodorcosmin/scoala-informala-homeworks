@@ -44,7 +44,7 @@ public interface CustomerRepository {
      * @return saves the list into the txt file
      * @throws IOException
      */
-    List<Customer> saveCustomers(List<Customer> customers) throws IOException;
+    void saveCustomerToFile(Customer customer) throws IOException;
 
     /**
      * @param customers
@@ -52,7 +52,7 @@ public interface CustomerRepository {
      * @throws IOException
      * @throws ClassNotFoundException
      */
-    List<Customer> readCustomers(List<Customer> customers) throws IOException, ClassNotFoundException;
+    List<Customer> readAllCustomers() throws IOException, ClassNotFoundException;
 
 
 }

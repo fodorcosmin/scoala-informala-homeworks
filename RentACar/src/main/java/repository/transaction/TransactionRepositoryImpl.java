@@ -12,18 +12,22 @@ import java.util.*;
 
 public class TransactionRepositoryImpl implements TransactionRepository {
 
-    private List<Transaction> transactions;
-    private HashMap<Transaction,Date> hm = new HashMap<Transaction,Date>();
 
+    private List<Transaction> transactions;
+
+    public TransactionRepositoryImpl() {
+        this.transactions = new ArrayList<>();
+    }
 
     public void getAll() throws IOException, ClassNotFoundException {
-        System.out.println("" + readTransactions(transactions));
+        System.out.println("" + readAllTransactions());
     }
     public void addAll(List<Transaction> transactions) {
     }
 
-    public void add(Transaction transaction) {
-
+    public void add(Transaction transaction) throws IOException {
+        transactions.add(transaction);
+        saveTransactionToFile(transaction);
     }
 
 
@@ -38,20 +42,25 @@ public class TransactionRepositoryImpl implements TransactionRepository {
         return null;
     }
 
-    public List<Transaction> saveTransactions(List<Transaction> transactions) throws IOException {
-        FileOutputStream fout = new FileOutputStream("transactions.txt");
-        ObjectOutputStream oos = new ObjectOutputStream(fout);
-        oos.writeObject(transactions);
-        fout.close();
-        return transactions;
+    public void saveTransactionToFile(Transaction transaction) throws IOException {
+        ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("transactions.txt"));
+        output.writeObject(transaction);
+        output.close();
+
     }
 
 
-    public List<Transaction> readTransactions(List<Transaction> transactions) throws IOException, ClassNotFoundException {
-        FileInputStream fis = new FileInputStream("transactions.txt");
-        ObjectInputStream ois = new ObjectInputStream(fis);
-        transactions = (List<Transaction>) ois.readObject();
-        ois.close();
-        return transactions;
+        public List<Transaction> readAllTransactions() throws IOException,ClassNotFoundException {
+            List<Transaction> transactions = new ArrayList<>();
+            try {
+                ObjectInputStream objIn = new ObjectInputStream(new FileInputStream("transactions.txt"));
+                Transaction transaction = null;
+                while ((transaction = (Transaction) objIn.readObject()) != null) {
+                }
+                objIn.close();
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+            return transactions;
     }
 }

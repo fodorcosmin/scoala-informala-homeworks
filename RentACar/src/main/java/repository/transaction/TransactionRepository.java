@@ -23,7 +23,7 @@ public interface TransactionRepository {
     /**
      * Add
      */
-    void add(Transaction transaction);
+    void add(Transaction transaction) throws IOException;
 
     /**
      * Add all
@@ -41,16 +41,20 @@ public interface TransactionRepository {
     void update(Transaction transaction);
 
     /**
-     * @param filename
-     * @return saves the transactions in a given filename
+     *
+     * @param transactions
+     * @return  Saves one transaction at a time. Transaction MUST implement Serializable.
      * @throws IOException
      */
-    List<Transaction> saveTransactions(List<Transaction> transactions) throws IOException;
+    void saveTransactionToFile(Transaction transactions) throws IOException;
+
 
     /**
-     * @param filename
-     * @return reads from the given filename
+     *
+     * @param transactions
+     * @return  Reads all transactions from a file
      * @throws IOException
+     * @throws ClassNotFoundException
      */
-    List<Transaction> readTransactions(List<Transaction> transactions) throws IOException, ClassNotFoundException;
+    List<Transaction> readAllTransactions() throws IOException, ClassNotFoundException;
 }

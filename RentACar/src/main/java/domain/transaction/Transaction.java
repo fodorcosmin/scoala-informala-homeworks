@@ -8,6 +8,7 @@ import repository.car.CarRepositoryImpl;
 import repository.customer.CustomerRepositoryImpl;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -15,15 +16,13 @@ import java.util.List;
  */
 public class Transaction implements Serializable {
     private int id;
-    private List<RentalTime> rentalTimeList;
-    private List<Customer> customerList;
-    private List<Car> carList;
-
+    private RentalTime rentalTime;
+    private Customer customer;
+    private Car car;
+    private Date createDate = new Date();
 
     public Transaction() {
-        this.rentalTimeList = new RentalCalendar().getRentalTimes();
-        this.customerList = new CustomerRepositoryImpl().getCustomers();
-        this.carList = new CarRepositoryImpl().getCars();
+
 
     }
 
@@ -36,29 +35,35 @@ public class Transaction implements Serializable {
         this.id = id;
     }
 
-    public List<RentalTime> getRentalTimeList() {
-        return rentalTimeList;
+    public RentalTime getRentalTime() {
+        return rentalTime;
     }
 
-    public void setRentalTimeList(List<RentalTime> rentalTimeList) {
-        this.rentalTimeList = rentalTimeList;
+    public void setRentalTime(RentalTime rentalTime) {
+        this.rentalTime = rentalTime;
     }
 
-    public List<Customer> getCustomerList() {
-        return customerList;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomerList(List<Customer> customerList) {
-        this.customerList = customerList;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
-    public List<Car> getCarList() {
-        return carList;
+    public Car getCar() {
+        return car;
     }
 
-    public void setCarList(List<Car> carList) {
-        this.carList = carList;
+    public void setCar(Car car) {
+        this.car = car;
     }
 
+    public Date getCreateDate() {
+        return createDate;
+    }
 
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
 }

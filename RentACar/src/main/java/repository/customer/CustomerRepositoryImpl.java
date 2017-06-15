@@ -19,7 +19,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
     @Override
     public void getAll() throws IOException, ClassNotFoundException {
-        System.out.println("" + readCustomers(customers));
+        System.out.println("" + readAllCustomers());
     }
 
     public void addAll(List<Customer> customers) {
@@ -29,25 +29,29 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
     public void add(Customer customer) throws IOException {
         customers.add(customer);
-        saveCustomers(customers);
+        saveCustomerToFile(customer);
     }
 
 
-    public List<Customer> saveCustomers(List<Customer> customers) throws IOException {
-        FileOutputStream fout = new FileOutputStream("customers.txt");
-        ObjectOutputStream oos = new ObjectOutputStream(fout);
-        oos.writeObject(customers);
-        fout.close();
+    public void saveCustomerToFile(Customer customer) throws IOException {
+        ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("transactions.txt"));
+        output.writeObject(customer);
+        output.close();
+    }
+
+
+    public List<Customer> readAllCustomers() throws IOException, ClassNotFoundException {
+        List<Customer> customers = new ArrayList<>();
+        try {
+            ObjectInputStream objIn = new ObjectInputStream(new FileInputStream("customers.txt"));
+            Customer customer = null;
+            while ((customer = (Customer) objIn.readObject()) != null) {
+            }
+            objIn.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
         return customers;
-    }
-
-
-    public List<Customer> readCustomers(List<Customer> customers) throws IOException, ClassNotFoundException {
-        FileInputStream fis = new FileInputStream("customers.txt");
-        ObjectInputStream ois = new ObjectInputStream(fis);
-        customers = (List<Customer>) ois.readObject();
-        ois.close();
-        return customers; //TODO  some problems here :)
     }
 
     public void delete(Customer customer) {

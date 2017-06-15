@@ -40,7 +40,7 @@ public interface CarRepository {
     /**
      * Saves a entry into a file
      */
-    List<Car> save(List<Car> cars) throws IOException;
+    void saveCarToFile(Car car) throws IOException;
 
     /**
      * @param filename
@@ -49,7 +49,7 @@ public interface CarRepository {
      * @throws IOException
      * @throws ClassNotFoundException
      */
-    List readCars(List<Car> cars) throws IOException, ClassNotFoundException;
+    List readAllCars() throws IOException, ClassNotFoundException;
 
     /**
      * Updates the current status of cars in the system.

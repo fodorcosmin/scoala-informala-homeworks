@@ -18,9 +18,8 @@ public class CarRepositoryImpl implements CarRepository {
 
 
     public CarRepositoryImpl() {
+
         this.cars = new ArrayList<>();
-
-
     }
 
 
@@ -116,7 +115,7 @@ public class CarRepositoryImpl implements CarRepository {
 
 
     public void getAll() throws IOException, ClassNotFoundException {
-        System.out.println("" + readCars(cars));
+        System.out.println("" + readAllCars());
     }
 
     public void addAll(List<Car> cars) {
@@ -125,7 +124,7 @@ public class CarRepositoryImpl implements CarRepository {
 
     public void add(Car car) throws IOException {
         cars.add(car);
-        save(cars);
+        saveCarToFile(car);
 
     }
 
@@ -134,20 +133,24 @@ public class CarRepositoryImpl implements CarRepository {
 
     }
 
-    public List<Car> save(List<Car> cars) throws IOException {
-        FileOutputStream fout = new FileOutputStream("cars.txt");
-        ObjectOutputStream oos = new ObjectOutputStream(fout);
-        oos.writeObject(cars);
-        fout.close();
-        return cars;
+    public void saveCarToFile(Car car) throws IOException {
+        ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("cars.txt"));
+        output.writeObject(car);
+        output.close();
     }
 
 
-    public List<Car> readCars(List<Car> cars) throws IOException, ClassNotFoundException {
-        FileInputStream fis = new FileInputStream("cars.txt");
-        ObjectInputStream ois = new ObjectInputStream(fis);
-        cars = (List<Car>) ois.readObject();
-        ois.close();
+    public List<Car> readAllCars() throws IOException, ClassNotFoundException {
+        List<Car> cars = new ArrayList<>();
+        try {
+            ObjectInputStream objIn = new ObjectInputStream(new FileInputStream("customers.txt"));
+            Car car = null;
+            while ((car = (Car) objIn.readObject()) != null) {
+            }
+            objIn.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
         return cars;
     }
 
