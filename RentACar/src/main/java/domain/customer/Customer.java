@@ -8,89 +8,94 @@ import java.io.Serializable;
  */
 public class Customer implements Serializable {
 
-    /**
-     * @param // FIXME: 6/3/2017    ID of the user
-     * @param // FIXME: 6/3/2017  First name of the user
-     * @param // FIXME: 6/3/2017   Last name of the user
-     * @param // FIXME: 6/3/2017      CustomerServiceImpl email
-     * @param // FIXME: 6/3/2017   CustomerServiceImpl Passport
-     */
+
+  private int id;
+  private String firstname;
+  private String lastname;
+  private String email;
+  private boolean passport = false;
+  private String telephone;
+  private Address address;
+  private PaymentMethod paymentMethod;
 
 
-    private int id;
-    private String firstname;
-    private String lastname;
-    private String email;
-    private boolean passport = false;
-    private String telephone;
-    private Address address;
+  public Customer() {
+  }
 
-    public Customer() {
-    }
+  public Customer(int id, String firstName, String lastName, String email, boolean passport, String telephone, String streetAddress, String city) {
+  }
 
-    public Customer(int id, String firstName, String lastName, String email, boolean passport, String telephone, String streetAddress, String city) {
-    }
 
-    public int getUserid() {
-        return id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public void setUserid(int userid) {
-        this.id = userid;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public String getFirstname() {
-        return firstname;
-    }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
+  public String getFirstname() {
+    return firstname;
+  }
 
-    public String getLastname() {
-        return lastname;
-    }
+  public void setFirstname(String firstname) {
+    this.firstname = firstname;
+  }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
+  public String getLastname() {
+    return lastname;
+  }
 
-    public String getEmail() {
-        return email;
-    }
+  public void setLastname(String lastname) {
+    this.lastname = lastname;
+  }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public String getEmail() {
+    return email;
+  }
 
-    public boolean isPassport() {
-        return passport;
-    }
+  public void setEmail(String email) {
+    this.email = email;
+  }
 
-    public void setPassport(boolean passport) {
-        this.passport = passport;
-    }
+  public boolean isPassport() {
+    return passport;
+  }
 
-    public String getTelephone() {
-        return telephone;
-    }
+  public void setPassport(boolean passport) {
+    this.passport = passport;
+  }
 
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
+  public String getTelephone() {
+    return telephone;
+  }
 
-    public Address getAddress() {
-        return address;
-    }
+  public void setTelephone(String telephone) {
+    this.telephone = telephone;
+  }
 
-    public void setAddress(Address address) {
-        this.address = address;
-    }
+  public Address getAddress() {
+    return address;
+  }
 
-    @Override
-    public String toString() {
-        return "" + firstname + "" + lastname + "" + email + "" + telephone;
-    }
+  public void setAddress(Address address) {
+    this.address = address;
+  }
+
+
+  public PaymentMethod getPaymentMethod() {
+    return paymentMethod;
+  }
+
+  public void setPaymentMethod(PaymentMethod paymentMethod) {
+    this.paymentMethod = paymentMethod;
+  }
+
+  @Override
+  public String toString() {
+    return "" + firstname + "" + lastname + "" + email + "" + telephone;
+  }
 }
 
 

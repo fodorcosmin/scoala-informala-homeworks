@@ -12,158 +12,174 @@ import java.util.List;
  * Car Class initialisation
  */
 public class Car implements Serializable {
-    private int id;
-    private List<RentalTime> rentalTimeList;
-    private String brand;
-    private String model;
-    private float size;
-    private String color;
-    private int seats;
-    private int doors;
-    private boolean ac = false;
-    private boolean gps = false;
-    private GearBox gearBox;
-    private FuelType fuelType;
-    private VehicleCategory vehicleCategory;
-    // constructor
+  private int id;
+  private String brand;
+  private String model;
+  private Engine engineType;
+  private String color;
+  private int seats;
+  private int doors;
+  private boolean ac = false;
+  private boolean gps = false;
+  private GearBox gearBox;
+  private FuelType fuelType;
+  private VehicleCategory vehicleCategory;
+  private Price rentPrice;
+  private List<RentalTime> rentalTimeList;
 
+  public Car(int id) {
 
-    public Car(String brand, String model) {
-        this.brand = brand;
-        this.model = model;
-    }
+  }
 
-    public Car(int id, List<RentalTime> rentalTimeList) {
-        this.id = id;
-        this.rentalTimeList = rentalTimeList;
-    }
+  public Car(String brand, String model) {
+    this.brand = brand;
+    this.model = model;
+  }
 
-    public Car(int id, String brand, String model, float size, String color, int seats, int doors, boolean ac, boolean gps, GearBox gearBox, FuelType fuelType, VehicleCategory vehicleCategory) {
-        this.id = id;
-        this.brand = brand;
-        this.model = model;
-        this.size = size;
-        this.color = color;
-        this.seats = seats;
-        this.doors = doors;
-        this.ac = ac;
-        this.gps = gps;
-        this.gearBox = gearBox;
-        this.fuelType = fuelType;
-        this.vehicleCategory = vehicleCategory;
-    }
+  public Car(int id, String brand, String model, Engine engineType, String color, int seats, int doors, boolean ac, boolean gps, GearBox gearBox, FuelType fuelType, VehicleCategory vehicleCategory) {
+    this.id = id;
+    this.brand = brand;
+    this.model = model;
+    this.engineType = engineType;
+    this.color = color;
+    this.seats = seats;
+    this.doors = doors;
+    this.ac = ac;
+    this.gps = gps;
+    this.gearBox = gearBox;
+    this.fuelType = fuelType;
+    this.vehicleCategory = vehicleCategory;
+    this.rentPrice = rentPrice;
+  }
 
+  public int getId() {
+    return id;
+  }
 
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public int getId(int id) {
-        return this.id;
-    }
+  public String getBrand() {
+    return brand;
+  }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public void setBrand(String brand) {
+    this.brand = brand;
+  }
 
-    public String getBrand() {
-        return brand;
-    }
+  public String getModel() {
+    return model;
+  }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
+  public void setModel(String model) {
+    this.model = model;
+  }
 
-    public String getModel() {
-        return model;
-    }
+  public Engine getEngineType() {
+    return engineType;
+  }
 
-    public void setModel(String model) {
-        this.model = model;
-    }
+  public void setEngineType(Engine engineType) {
+    this.engineType = engineType;
+  }
 
-    public float getSize() {
-        return size;
-    }
+  public String getColor() {
+    return color;
+  }
 
-    public void setSize(float size) {
-        this.size = size;
-    }
+  public void setColor(String color) {
+    this.color = color;
+  }
 
-    public String getColor() {
-        return color;
-    }
+  public int getSeats() {
+    return seats;
+  }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
+  public void setSeats(int seats) {
+    this.seats = seats;
+  }
 
-    public int getSeats() {
-        return seats;
-    }
+  public int getDoors() {
+    return doors;
+  }
 
-    public void setSeats(int seats) {
-        this.seats = seats;
-    }
+  public void setDoors(int doors) {
+    this.doors = doors;
+  }
 
-    public int getDoors() {
-        return doors;
-    }
+  public boolean isAc() {
+    return ac;
+  }
 
-    public void setDoors(int doors) {
-        this.doors = doors;
-    }
+  public void setAc(boolean ac) {
+    this.ac = ac;
+  }
 
-    public boolean isAc() {
-        return ac;
-    }
+  public boolean isGps() {
+    return gps;
+  }
 
-    public void setAc(boolean ac) {
-        this.ac = ac;
-    }
+  public void setGps(boolean gps) {
+    this.gps = gps;
+  }
 
-    public boolean isGps() {
-        return gps;
-    }
+  public GearBox getGearBox() {
+    return gearBox;
+  }
 
-    public void setGps(boolean gps) {
-        this.gps = gps;
-    }
+  public void setGearBox(GearBox gearBox) {
+    this.gearBox = gearBox;
+  }
 
-    public List<RentalTime> getRentalTimeList() {
-        return rentalTimeList;
-    }
+  public FuelType getFuelType() {
+    return fuelType;
+  }
 
-    public void setRentalTimeList(List<RentalTime> rentalTimeList) {
-        this.rentalTimeList = rentalTimeList;
-    }
+  public void setFuelType(FuelType fuelType) {
+    this.fuelType = fuelType;
+  }
 
-    public GearBox getGearBox() {
-        return gearBox;
-    }
+  public VehicleCategory getVehicleCategory() {
+    return vehicleCategory;
+  }
 
-    public void setGearBox(GearBox gearBox) {
-        this.gearBox = gearBox;
-    }
+  public void setVehicleCategory(VehicleCategory vehicleCategory) {
+    this.vehicleCategory = vehicleCategory;
+  }
 
-    public FuelType getFuelType() {
-        return fuelType;
-    }
+  public Price getRentPrice() {
+    return rentPrice;
+  }
 
-    public void setFuelType(FuelType fuelType) {
-        this.fuelType = fuelType;
-    }
+  public void setRentPrice(Price rentPrice) {
+    this.rentPrice = rentPrice;
+  }
 
-    public VehicleCategory getVehicleCategory() {
-        return vehicleCategory;
-    }
+  @Override
+  public String toString() {
+    return "Car{" +
+      "id=" + id +
+      ", brand='" + brand + '\'' +
+      ", model='" + model + '\'' +
+      ", engineType=" + engineType +
+      ", color='" + color + '\'' +
+      ", seats=" + seats +
+      ", doors=" + doors +
+      ", ac=" + ac +
+      ", gps=" + gps +
+      ", gearBox=" + gearBox +
+      ", fuelType=" + fuelType +
+      ", vehicleCategory=" + vehicleCategory;
 
-    public void setVehicleCategory(VehicleCategory vehicleCategory) {
-        this.vehicleCategory = vehicleCategory;
-    }
+  }
 
+  public List<RentalTime> getRentalTimeList() {
+    return rentalTimeList;
+  }
 
-    @Override
-    public String toString() {
-        return " "  + id  + " " + brand + " " + model;
-    }
-
+  public void setRentalTimeList(List<RentalTime> rentalTimeList) {
+    this.rentalTimeList = rentalTimeList;
+  }
 }
 

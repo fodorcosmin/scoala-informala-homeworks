@@ -8,17 +8,20 @@ package domain.car;
  * Enum VehicleCategory holds the vehicle category constants.
  */
 public enum VehicleCategory {
-    SPORT, SEDAN, HATCHBACK, LIMOUSINE,SUV;
+  SPORT, SEDAN, HATCHBACK, LIMOUSINE, SUV;
 
-    // Iterating through enum //
-    public static VehicleCategory search(String test) {
-        for (VehicleCategory vehicle : VehicleCategory.values()) {
-            if (vehicle.name().equals(test)) {
-                return vehicle;
+  // Iterating through enum //
 
-            }
 
-        }
-        return null;
+  public static VehicleCategory search(String test) {
+    for (VehicleCategory vehicle : VehicleCategory.values()) {
+      if (vehicle.name().equals(test)) {
+        return vehicle;
+
+      }
+
     }
+    return null;
+  }
+
 }
