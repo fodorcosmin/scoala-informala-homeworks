@@ -1,33 +1,31 @@
-import domain.car.*;
-import domain.customer.Customer;
+import domain.car.EngineType;
+import domain.car.FuelType;
+import domain.car.GearBox;
+import domain.car.VehicleCategory;
+import org.apache.log4j.Logger;
 import repository.CarRepository;
 import repository.CustomerRepository;
-import services.CarService;
-import services.CustomerService;
+import repository.TransactionRepository;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  * Created by Fodor Cosmin on 5/26/2017.
  */
 public class Main {
-  private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
+  private static Logger LOG = Logger.getLogger(Main.class);
   private static CustomerRepository customerRepository;
-  private static CustomerService customerService;
-  private static CarService carService;
   private static CarRepository carRepository;
+  private static TransactionRepository transactionRepository;
 
   public static void main(String[] args) {
     customerRepository = new CustomerRepository();
-    customerService = new CustomerService();
     carRepository = new CarRepository();
-    carService = new CarService();
     Scanner input = new Scanner(System.in);
     mainMenu(input);
   }
@@ -76,11 +74,11 @@ public class Main {
 
     switch (option) {
       case 1:
-        carRepository.readAll();
+        carRepository.getAll();
         mainMenu(input);
         break;
       case 2: //
-        customerRepository.readAll();
+        customerRepository.getAll();
         mainMenu(input);
         break;
       case 3:
@@ -144,8 +142,9 @@ public class Main {
 
   private static void rentalMenu(Scanner input) {
     System.out.println("1.Enter period:");
-    System.out.println("2.testing:");
-    System.out.println("3.Exit to main menu:");
+    System.out.println("2.View ongoing transactions:");
+    System.out.println("3.testing:");
+    System.out.println("4.Exit to main menu:");
 
     int option = input.nextInt();
     switch (option) {
@@ -153,6 +152,7 @@ public class Main {
         searchPeriod(input);
         break;
       case 2:
+        transactionRepository.getAll();
 
       case 3:
 
@@ -168,17 +168,17 @@ public class Main {
       Date beginDate = df.parse(input.next());
       System.out.println("Enter the end date:");
       Date endDate = df.parse(input.next());
-      System.out.println(carService.findAvailablePeriod(beginDate, endDate));
+
       mainMenu(input);
     } catch (ParseException e) {
-      LOGGER.log(Level.INFO, "Something went wrong", e.getMessage());
+      LOG.info("Something went wrong");
     }
   }
 
   private static void searchCarsByBrand(Scanner input) {
     System.out.println("Enter the brand for the current search:");
     String brand = input.nextLine();
-    carService.findCarsByBrand(brand);
+
 
   }
 
@@ -187,7 +187,7 @@ public class Main {
     String brand = input.nextLine();
     System.out.println("Enter the model for the current search:");
     String model = input.nextLine();
-    carService.findCarsByBrandandModel(brand, model);
+
   }
 
   private static void searchCarsByMultipleCategories() {
@@ -200,14 +200,13 @@ public class Main {
     boolean gps = input.nextBoolean();
     System.out.println("Number of seats:");
     int seats = input.nextInt();
-    System.out.println("We have found the following cars :" + "\n" + carService.findByMultipleCategories(fuelType, gps, seats));
+    System.out.println("We have found the following cars :" + "\n");
     searchMenu(input);
   }
 
   private static void searchCustomerByFirstName(Scanner input) {
     System.out.println("Enter customer First name : ");
     String firstName = input.next();
-    customerService.findCustomerByFirstName(firstName);
   }
 
   private static void searchCustomerByFullName(Scanner input) {
@@ -215,25 +214,15 @@ public class Main {
     String firstName = input.next();
     System.out.println("Enter customer Last name : ");
     String lastName = input.next();
-    customerService.findCustomerByFullName(firstName, lastName);
 
-    if (customerService != null) {
-      System.out.println("Username exists in Database already with the name of " + firstName + " " + lastName);
-      mainMenu(input);
-    } else {
-      System.out.println("Username not found in Database");
-      mainMenu(input);
-    }
-
-  }
+  }    //TODO METHOD LOGIC//
 
   private static void searchCustomerById() {
     Scanner input = new Scanner(System.in);
     System.out.println("Enter the id : ");
     int id = input.nextInt();
-    customerRepository.getCustomerById(id);
     mainMenu(input);
-  }
+  } //    //TODO METHOD LOGIC//
 
   private static void addACustomer(Scanner input) {
     System.out.println("Do you want to add a customer in the database: Y/N");
@@ -255,28 +244,26 @@ public class Main {
       String streetAddress = input.next();
       System.out.println("Enter customer city : ");
       String city = input.next();
-      customerRepository.add(new Customer(id, firstName, lastName, email, passport, telephone, streetAddress, city));
       mainMenu(input);
     } else if
       (decision.equalsIgnoreCase("n"))
       System.out.println("Serving next customer!");
-  }
+  } //    //TODO METHOD LOGIC//
 
   private static void delACustomer() {
     System.out.println("Enter the id for the customer you want to delete :");
     Scanner input = new Scanner(System.in);
     int id = input.nextInt();
-    customerService.findById(id);
     System.out.println("Are you sure you want to delete user? :");
     String decision = input.next();
     if (decision.equalsIgnoreCase("y")) {
-      customerRepository.delCustomerById(id);
+      //TODO METHOD LOGIC//
       adminMenu(input);
     } else if (decision.equalsIgnoreCase("n")) {
       System.out.println("Exit to main menu!");
       mainMenu(input);
     }
-  }
+  } //   //TODO METHOD LOGIC//
 
 
   private static void addACar(Scanner input) {
@@ -293,7 +280,7 @@ public class Main {
       String model = input.next();
       System.out.println("Enter car engine : ");
       String engine = input.next();
-      Engine engineType = Engine.search(engine); //TODO
+      EngineType engineType = EngineType.valueOf(engine); //TODO
       System.out.println("Enter car's color : ");
       String color = input.next();
       System.out.println("Enter car no of seats : ");
@@ -306,39 +293,29 @@ public class Main {
       boolean gps = input.nextBoolean();
       System.out.println("Enter the car's gearbox : ");
       String gear = input.next();
-      GearBox gearBox = GearBox.search(gear);
+      GearBox gearBox = GearBox.valueOf(gear);
       System.out.println("Enter the car's fueltype : ");
       String fuel = input.next();
-      FuelType fuelType = FuelType.search(fuel);
+      FuelType fuelType = FuelType.valueOf(fuel);
       System.out.println("Enter the car's type : ");
       String type = input.next();
-      VehicleCategory vehicleCategory = VehicleCategory.search(type);
-      carRepository.add(new Car(id, brand, model, engineType, color, seats, doors, ac, gps, gearBox, fuelType, vehicleCategory));
-
+      VehicleCategory vehicleCategory = VehicleCategory.valueOf(type);
+      //TODO METHOD LOGIC//
     } else if
       (decision.equalsIgnoreCase("n"))
       System.out.println("Exit to main menu!");
     mainMenu(input);
-  }
+  } //    //TODO METHOD LOGIC//
 
   private static void delACar(Scanner input) {
     System.out.println("Enter the car's brand :");
     String brand = input.next();
     System.out.println("Enter the car's model :");
     String model = input.next();
-    carService.findCarsByBrandandModel(brand, model);
-    Car car = new Car(brand, model);
     System.out.println("Do you want to delete the car? Y/N");
-    String dec = input.next();
-    if (dec.equalsIgnoreCase("y")) {
-      carRepository.remove(car);
-      LOGGER.log(Level.INFO, "The following car was removed from repository : " + brand + " " + model);
-    } else if
-      (dec.equalsIgnoreCase("n"))
-      mainMenu(input);
+    //TODO METHOD LOGIC//
 
-  }
-
-
+  } //   //TODO METHOD LOGIC//
 }
+
 

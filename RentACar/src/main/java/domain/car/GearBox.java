@@ -9,17 +9,6 @@ package domain.car;
  */
 public enum GearBox {
 
-  AUTOMATIC, MANUAL,;
+  AUTOMATIC, MANUAL
 
-  // Iterating through enum //
-  public static GearBox search(String test) {
-    for (GearBox gearBox : GearBox.values()) {
-      if (gearBox.name().equals(test)) {
-        return gearBox;
-
-      }
-
-    }
-    return null;
-  }
 }

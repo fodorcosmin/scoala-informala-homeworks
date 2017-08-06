@@ -1,6 +1,5 @@
 package services;
 
-import java.io.IOException;
 import java.util.List;
 
 /**
@@ -14,6 +13,6 @@ public interface SearchService<T> {
    *
    * @return
    */
-  List<T> findById(int id) throws IOException;
+  List<T> findById(int id);
 
 }

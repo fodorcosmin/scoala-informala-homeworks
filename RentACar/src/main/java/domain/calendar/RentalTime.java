@@ -1,7 +1,5 @@
 package domain.calendar;
 
-import domain.car.Car;
-
 import java.util.Date;
 
 /**
@@ -38,10 +36,5 @@ public class RentalTime {
     this.endDate = endDate;
   }
 
-
-  public <T extends Car, V extends Number> double calculateRentPrice(T car, V rentalTime) {
-
-    return car.getRentPrice().getValue() * rentalTime.doubleValue();
-  }
 
 }

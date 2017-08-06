@@ -2,71 +2,104 @@ package repository;
 
 
 import domain.calendar.Transaction;
+import org.apache.log4j.Logger;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.sql.*;
 
 /**
  * Created by  Fodor Cosmin on 6/13/2017.
  */
 
-public class TransactionRepository implements Repository<Transaction> {
-
-  private static final Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-  private List<Transaction> transactions;
+public class TransactionRepository extends BaseDbRepository implements Repository<Transaction> {
+  private static Logger LOG = Logger.getLogger(TransactionRepository.class);
 
   public TransactionRepository() {
-    this.transactions = new ArrayList<>();
-  }
-
-  public List<Transaction> getAll() {
-    return transactions;
-  }
-
-  public void addAll(List<Transaction> transactions) {
-  }
-
-  public void add(Transaction transaction) {
-    transactions.add(transaction);
-
+    super();
   }
 
 
-  public void remove(Transaction transaction) {
-    transactions.remove(transaction);
-  }
-
-  public void update(List<Transaction> transactions) {
-  }
+  @Override
+  public void insert(Transaction transaction) {
 
 
-  public void saveToFile(Transaction transaction) {
+    String insert = "Adding transaction into repository (id , begin_date , end_date)" + "values (?,?,?)";
+
     try {
-      ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("transactions.txt"));
-      output.writeObject(transaction);
-      output.flush();
-      output.close();
-    } catch (IOException e) {
-      LOGGER.log(Level.INFO, "Something went wrong", e.getMessage());
+      // set all the preparedstatement parameters
+      PreparedStatement st = connection.prepareStatement(insert);
+      st.setString(1, String.valueOf(transaction.getId()));
+      st.setObject(2, transaction.getBeginDate());
+      st.setObject(3, transaction.getEndDate());
+
+      // execute the preparedstatement
+      st.execute();
+      closeStatement(st);
+      connection.close();
+    } catch (SQLException e) {
+      LOG.info("Blabla");
+
     }
   }
 
 
-  public List<Transaction> readAll() {
-    List<Transaction> transactions1 = new ArrayList<>();
+  @Override
+  public void select() throws SQLException {
+    String select = "Search a transaction in the DB(id)"
+      + " values (?,)";
+    PreparedStatement st = connection.prepareStatement(select);
+    ResultSet rs = st.executeQuery(select);
     try {
-      ObjectInputStream objIn = new ObjectInputStream(new FileInputStream("cars.txt"));
-      Transaction transaction = null;
-      while ((transaction = (Transaction) objIn.readObject()) != null) {
-        transactions1.add(transaction);
+
+
+      while (rs.next()) {
+        Integer transactionId = Integer.valueOf(rs.getString("id"));
+
+
+        System.out.println("transaction id" + transactionId);
+
       }
-      objIn.close();
-    } catch (Exception e) {
-      LOGGER.log(Level.INFO, "Something went wrong", e.getMessage());
+
+
+    } catch (SQLException e) {
+      LOG.info("SQL error" + e);
+    } finally {
+      closeStatement(st);
+      connection.close();
     }
-    return transactions1;
+  }
+
+  @Override
+  public void update() {
+
+  }
+
+  @Override
+  public void getAll() {
+    try {
+      connection.setAutoCommit(false);
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    try {
+      ResultSet rs = null;
+      Statement st = connection.createStatement();
+      DatabaseMetaData md = connection.getMetaData();
+      rs = md.getTables("transactions", null, "%", null);
+
+      while (rs.next()) {
+        System.out.println(rs.getString(3));
+      }
+
+
+    } catch (SQLException ex) {
+
+      ex.printStackTrace();
+
+    }
+  }
+
+  @Override
+  public void delete() {
+
   }
 }

@@ -1,116 +1,123 @@
 package repository;
 
-import domain.calendar.RentalTime;
+
 import domain.car.Car;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.sql.*;
+
 
 /**
  * Created by Fodor Cosmin on 5/23/2017.
  */
-public class CarRepository implements Repository<Car> {
+public class CarRepository extends BaseDbRepository implements Repository<Car> {
 
-  private static final Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-  private List<Car> cars;
 
   public CarRepository() {
-    this.cars = new ArrayList<>();
-  }
-
-  public void addAll(List<Car> cars) {
-    cars.addAll(cars);
-  }
-
-  public void add(Car car) {
-    cars.add(car);
-    saveToFile(car);
-  }
-
-  public List<Car> getAll() {
-    return cars;
-  }
-
-  public void remove(Car car) {
-    cars.remove(car);
-
-  }
-
-  public void update(List<Car> cars) {
-  }
-
-  public List<Car> getAvailablePeriod(Date beginDate, Date endDate) {
-    List<Car> foundCars = new ArrayList<>();
-
-    for (Car car : cars) {
-      boolean isAvailable = true;
-      for (RentalTime rentalTime : car.getRentalTimeList()) {
-        Date carBegin = rentalTime.getBeginDate();
-        Date carEnd = rentalTime.getEndDate();
-
-                /* it seems complicated
-                if ((beginDate.before(carBegin) && endDate.before(carEnd) && endDate.after(carBegin)) ||
-                        (beginDate.before(carBegin) && endDate.after(carEnd)) ||
-                        (beginDate.after(carBegin) && beginDate.before(carEnd) && endDate.after(carBegin) && endDate.before(carEnd)) ||
-                        (beginDate.after(carBegin) && beginDate.before(carEnd) && endDate.after(carEnd))) {
-                    isAvailable = false;
-                    break;
-                }*/
-        if (beginDate.before(carEnd) && endDate.after(carBegin)) {
-          isAvailable = false;
-          break;
-        }
-
-        if (isAvailable) {
-          foundCars.add(car);
-        }
-      }
-
-      if (foundCars.size() == 0) {
-        LOGGER.log(Level.FINE, "No cars are available in this period");
-      }
-
-
-    }
-    return foundCars;
+    super();
   }
 
 
-  public void saveToFile(Car car) {
+  @Override
+  public void insert(Car car) throws SQLException {
+    String insert = "Adding a car in DB (id, price, brand, model, color, gearbox, fueltype, enginetype, vehiclecategory, seats, doors, ac, gps, rentaltime)"
+      + " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
     try {
-      ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("cars.txt"));
-      output.flush();
-      output.writeObject(car);
-      output.close();
-    } catch (IOException e) {
-      LOGGER.log(Level.INFO, "Just a stack trace", e.getMessage());
-    }
-  }
-
-
-  public List<Car> readAll() {
-    List<Car> cars1 = new ArrayList<>();
-    try {
-      ObjectInputStream objIn = new ObjectInputStream(new FileInputStream("cars.txt"));
-      Car car = null;
-      while ((car = (Car) objIn.readObject()) != null) {
-        cars1.add(car);
-      }
-      objIn.close();
+      // set all the preparedstatement parameters
+      PreparedStatement st = connection.prepareStatement(insert);
+      st.setString(1, String.valueOf(car.getId()));
+      st.setString(2, String.valueOf(car.getPrice()));
+      st.setString(3, car.getBrand());
+      st.setString(4, car.getModel());
+      st.setString(5, car.getColor());
+      st.setString(6, String.valueOf(car.getGearBox()));
+      st.setString(7, String.valueOf(car.getFuelType()));
+      st.setString(8, String.valueOf(car.getEngineType()));
+      st.setString(9, String.valueOf(car.getVehicleCategory()));
+      st.setString(10, String.valueOf(car.getSeats()));
+      st.setString(11, String.valueOf(car.getDoors()));
+      st.setString(12, String.valueOf(car.isAc()));
+      st.setString(13, String.valueOf(car.isGps()));
+      st.setString(14, String.valueOf(car.getRentalTimeList()));
+// execute the preparedstatement
+      st.execute();
+      closeStatement(st);
+      connection.close();
     } catch (Exception e) {
-      LOGGER.log(Level.INFO, "Just a stack trace", e.getMessage());
+      System.err.println("Got an exception!");
+      System.err.println(e.getMessage());
     }
-    return cars1;
+  }
+
+
+  @Override
+  public void select() throws SQLException {
+
+    String select = "Search a car in the DB(id,brand, model)"
+      + " values (?,?,?)";
+    PreparedStatement st = connection.prepareStatement(select);
+    ResultSet rs = st.executeQuery(select);
+    try {
+
+
+      while (rs.next()) {
+        Integer carId = Integer.valueOf(rs.getString("id"));
+        String brand = rs.getString("brand");
+        String model = rs.getString("model");
+
+        System.out.println("carId" + carId);
+        System.out.println("brand" + brand);
+        System.out.println("model" + model);
+
+      }
+
+
+    } catch (SQLException e) {
+      System.out.println(e.getMessage());
+    } finally {
+      closeStatement(st);
+      connection.close();
+    }
   }
 
   @Override
-  public String toString() {
-    return "cars = " + cars;
+  public void update() {
+
   }
+
+
+  public void getAll() {
+    try {
+      connection.setAutoCommit(false);
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    try {
+      ResultSet rs;
+      Statement st = connection.createStatement();
+      DatabaseMetaData md = connection.getMetaData();
+      rs = md.getTables("cars", null, "%", null);
+
+      while (rs.next()) {
+        System.out.println(rs.getString(3));
+      }
+
+
+    } catch (SQLException ex) {
+
+      ex.printStackTrace();
+
+    }
+
+  }
+
+
+  @Override
+  public void delete() {
+
+  }
+
 }
+
 
 
