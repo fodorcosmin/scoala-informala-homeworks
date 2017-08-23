@@ -9,6 +9,17 @@ package domain.car;
  */
 public enum GearBox {
 
-  AUTOMATIC, MANUAL
+  AUTOMATIC, MANUAL;
 
+  public static GearBox search(String test) {
+    for (GearBox gear : GearBox.values()) {
+      if (gear.name().equalsIgnoreCase(test)) {
+        return gear;
+
+      }
+
+    }
+    return null;
+
+  }
 }

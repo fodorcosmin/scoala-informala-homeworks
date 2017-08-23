@@ -1,51 +1,53 @@
-//package services;
-//
-//import domain.calendar.Transaction;
-//import domain.customer.Customer;
-//import repository.TransactionRepository;
-//import util.MyLogger;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//import java.util.logging.Level;
-//
-///**
-// * Created by Cosmin on 6/13/2017.
-// */
-//
-//public class TransactionInterceptorService implements SearchService<Transaction> {
-//  private Customer customer;
-//
-//  private TransactionRepository transactionRepository;
-//
-//  public TransactionInterceptorService(TransactionRepository transactionRepository) {
-//
-//    this.transactionRepository = transactionRepository;
-//
-//  }
-//
-//
-//  @Override
-//  public List<Transaction> findById(int id) {
-//
-//    List<Transaction> foundTransactions = new ArrayList<>();
-//    for (Transaction transaction : transactionRepository.getAll()) {
-//      if (transaction.getId() == id) {
-//        foundTransactions.add(transaction);
-//      } else {
-//        MyLogger.log(Level.INFO, "ID NOT FOUND");
-//      }
-//    }
-//    return foundTransactions;
-//  }
-//
-//
-//  public List<Transaction> findAll() {
-//    List<Transaction> foundTransactions = new ArrayList<>();
-//    for (Transaction transaction : transactionRepository.getAll()) {
-//      foundTransactions.add(transaction);
-//
-//    }
-//    return foundTransactions;
-//  }
-//}
+package services;
+
+import domain.calendar.Transaction;
+import repository.TransactionRepositoryImpl;
+
+import java.util.List;
+
+/**
+ * Created by Fodor Cosmin on 6/13/2017.
+ */
+
+public class TransactionInterceptorService implements TransactionService {
+
+
+  private static final TransactionInterceptorService instance = new TransactionInterceptorService(new TransactionRepositoryImpl());
+  private TransactionRepositoryImpl transactionRepository;
+
+  public TransactionInterceptorService(TransactionRepositoryImpl transactionRepository) {
+    this.transactionRepository = transactionRepository;
+  }
+
+  public static TransactionInterceptorService getInstance() {
+    return instance;
+  }
+
+  @Override
+  public List<Transaction> findTransactionById(int id) {
+
+    return this.transactionRepository.getTransactionById(id);
+  }
+
+
+  @Override
+  public void add(Transaction transaction) {
+    this.transactionRepository.add(transaction);
+  }
+
+  @Override
+  public void delete(Transaction transaction) {
+    this.transactionRepository.delete(transaction);
+  }
+
+  @Override
+  public void update(Transaction transaction) {
+    this.transactionRepository.update(transaction);
+  }
+
+  @Override
+  public String getAll() {
+    return this.transactionRepository.getAll().toString();
+  }
+
+}

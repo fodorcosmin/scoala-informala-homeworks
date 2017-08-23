@@ -1,54 +1,41 @@
 package domain.car;
+
 /**
  * Created by Fodor Cosmin
  */
 
-import domain.calendar.RentalTime;
 
-import java.util.List;
-
-/**
- * Car Class initialisation
- */
 public class Car {
 
   private int id;
-  private Price price;
   private String brand;
   private String model;
   private String color;
-  private GearBox gearBox;
-  private FuelType fuelType;
-  private EngineType engineType;
-  private VehicleCategory vehicleCategory;
   private int seats;
   private int doors;
   private boolean ac;
   private boolean gps;
-  private List<RentalTime> rentalTimeList;
+  private boolean reserved = false;
+  private GearBox gearBox;
+  private FuelType fuelType;
+  private EngineType engineType;
+  private VehicleCategory vehicleCategory;
+  private double price;
 
 
   public int getId() {
     return id;
   }
 
-  public void setId(final int id) {
+  public void setId(int id) {
     this.id = id;
-  }
-
-  public Price getPrice() {
-    return price;
-  }
-
-  public void setPrice(final Price price) {
-    this.price = price;
   }
 
   public String getBrand() {
     return brand;
   }
 
-  public void setBrand(final String brand) {
+  public void setBrand(String brand) {
     this.brand = brand;
   }
 
@@ -56,7 +43,7 @@ public class Car {
     return model;
   }
 
-  public void setModel(final String model) {
+  public void setModel(String model) {
     this.model = model;
   }
 
@@ -64,47 +51,15 @@ public class Car {
     return color;
   }
 
-  public void setColor(final String color) {
+  public void setColor(String color) {
     this.color = color;
-  }
-
-  public GearBox getGearBox() {
-    return gearBox;
-  }
-
-  public void setGearBox(final GearBox gearBox) {
-    this.gearBox = gearBox;
-  }
-
-  public FuelType getFuelType() {
-    return fuelType;
-  }
-
-  public void setFuelType(final FuelType fuelType) {
-    this.fuelType = fuelType;
-  }
-
-  public EngineType getEngineType() {
-    return engineType;
-  }
-
-  public void setEngineType(final EngineType engineType) {
-    this.engineType = engineType;
-  }
-
-  public VehicleCategory getVehicleCategory() {
-    return vehicleCategory;
-  }
-
-  public void setVehicleCategory(final VehicleCategory vehicleCategory) {
-    this.vehicleCategory = vehicleCategory;
   }
 
   public int getSeats() {
     return seats;
   }
 
-  public void setSeats(final int seats) {
+  public void setSeats(int seats) {
     this.seats = seats;
   }
 
@@ -112,7 +67,7 @@ public class Car {
     return doors;
   }
 
-  public void setDoors(final int doors) {
+  public void setDoors(int doors) {
     this.doors = doors;
   }
 
@@ -120,7 +75,7 @@ public class Car {
     return ac;
   }
 
-  public void setAc(final boolean ac) {
+  public void setAc(boolean ac) {
     this.ac = ac;
   }
 
@@ -128,18 +83,55 @@ public class Car {
     return gps;
   }
 
-  public void setGps(final boolean gps) {
+  public void setGps(boolean gps) {
     this.gps = gps;
   }
 
-  public List<RentalTime> getRentalTimeList() {
-    return rentalTimeList;
+  public boolean isReserved() {
+    return reserved;
   }
 
-  public void setRentalTimeList(final List<RentalTime> rentalTimeList) {
-    this.rentalTimeList = rentalTimeList;
+  public void setReserved(boolean reserved) {
+    this.reserved = reserved;
+  }
+
+  public GearBox getGearBox() {
+    return gearBox;
+  }
+
+  public void setGearBox(GearBox gearBox) {
+    this.gearBox = gearBox;
+  }
+
+  public FuelType getFuelType() {
+    return fuelType;
+  }
+
+  public void setFuelType(FuelType fuelType) {
+    this.fuelType = fuelType;
+  }
+
+  public EngineType getEngineType() {
+    return engineType;
+  }
+
+  public void setEngineType(EngineType engineType) {
+    this.engineType = engineType;
+  }
+
+  public VehicleCategory getVehicleCategory() {
+    return vehicleCategory;
+  }
+
+  public void setVehicleCategory(VehicleCategory vehicleCategory) {
+    this.vehicleCategory = vehicleCategory;
+  }
+
+  public double getPrice() {
+    return price;
+  }
+
+  public void setPrice(double price) {
+    this.price = price;
   }
 }
-
-
-

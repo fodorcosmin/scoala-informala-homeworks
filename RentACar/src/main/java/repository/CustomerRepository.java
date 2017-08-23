@@ -2,40 +2,50 @@ package repository;
 
 import domain.customer.Customer;
 
-/**
- * Created by Fodor Cosmin on 5/26/2017.
- */
-public class CustomerRepository extends BaseDbRepository implements Repository<Customer> {
+import java.util.List;
 
+public interface CustomerRepository extends Repository<Customer> {
+  /**
+   * Get all Customers in the system.
+   *
+   * @return List<Customer>
+   */
+  List<Customer> getAll();
 
-  public CustomerRepository() {
-    super();
-  }
+  /**
+   * Get Customers by LastName.
+   *
+   * @return List<Customer>
+   */
+  List<Customer> getCustomerByLastName(String lastName);
 
+  /**
+   * Get Customers by Full Name.
+   *
+   * @return List<Customer>
+   */
+  List<Customer> getCustomerByFullName(String firstName, String lastName);
 
-  @Override
-  public void insert(Customer customer) {
+  /**
+   * Get Customers by Telephone number.
+   *
+   * @return List<Customer>
+   */
+  List<Customer> getCustomerByTelephone(String telephone);
 
-  }
+  /**
+   * Add a customer in the system.
+   */
+  void add(Customer customer);
 
-  @Override
-  public void select() {
+  /**
+   * Delete a customer from the system.
+   */
+  void delete(Customer customer);
 
-  }
-
-  @Override
-  public void update() {
-
-  }
-
-  @Override
-  public void getAll() {
-
-  }
-
-  @Override
-  public void delete() {
-
-
-  }
+  /**
+   * Update a customer details.
+   */
+  void update(Customer customer);
 }
+

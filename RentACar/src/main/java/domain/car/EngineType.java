@@ -11,7 +11,7 @@ public enum EngineType {
   // Iterating through enum //
   public static EngineType search(String test) {
     for (EngineType engine : EngineType.values()) {
-      if (engine.name().equals(test)) {
+      if (engine.name().equalsIgnoreCase(test)) {
         return engine;
 
       }

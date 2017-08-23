@@ -4,13 +4,18 @@ package domain.customer;
  * Created by Cosmin on 5/26/2017.
  */
 public class Address {
+
   private String streetAddress;
   private String city;
+
 
   public Address(String streetAddress, String city) {
     this.streetAddress = streetAddress;
     this.city = city;
 
+  }
+
+  public Address() {
   }
 
   public String getStreetAddress() {
