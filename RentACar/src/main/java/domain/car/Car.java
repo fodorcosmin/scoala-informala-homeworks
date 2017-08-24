@@ -1,170 +1,137 @@
 package domain.car;
+
 /**
  * Created by Fodor Cosmin
  */
 
-import domain.calendar.RentalCalendar;
-import domain.calendar.RentalTime;
 
-import java.io.Serializable;
-import java.util.List;
+public class Car {
 
-/**
- * Car Class initialisation
- */
-public class Car implements Serializable {
-    private int id;
-    private List<RentalTime> rentalTimeList;
-    private String brand;
-    private String model;
-    private float size;
-    private String color;
-    private int seats;
-    private int doors;
-    private boolean ac = false;
-    private boolean gps = false;
-    private GearBox gearBox;
-    private FuelType fuelType;
-    private VehicleCategory vehicleCategory;
-    // constructor
+  private int id;
+  private String brand;
+  private String model;
+  private String color;
+  private int seats;
+  private int doors;
+  private boolean ac;
+  private boolean gps;
+  private boolean reserved = false;
+  private GearBox gearBox;
+  private FuelType fuelType;
+  private EngineType engineType;
+  private VehicleCategory vehicleCategory;
+  private double price;
 
 
-    public Car(String brand, String model) {
-        this.brand = brand;
-        this.model = model;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public Car(int id) {
-        this.id = id;
-        this.rentalTimeList = rentalTimeList;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public Car(int id, String brand, String model, float size, String color, int seats, int doors, boolean ac, boolean gps, GearBox gearBox, FuelType fuelType, VehicleCategory vehicleCategory) {
-        this.id = id;
-        this.brand = brand;
-        this.model = model;
-        this.size = size;
-        this.color = color;
-        this.seats = seats;
-        this.doors = doors;
-        this.ac = ac;
-        this.gps = gps;
-        this.gearBox = gearBox;
-        this.fuelType = fuelType;
-        this.vehicleCategory = vehicleCategory;
-    }
+  public String getBrand() {
+    return brand;
+  }
 
+  public void setBrand(String brand) {
+    this.brand = brand;
+  }
 
+  public String getModel() {
+    return model;
+  }
 
-    public int getId(int id) {
-        return this.id;
-    }
+  public void setModel(String model) {
+    this.model = model;
+  }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public String getColor() {
+    return color;
+  }
 
-    public String getBrand() {
-        return brand;
-    }
+  public void setColor(String color) {
+    this.color = color;
+  }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
+  public int getSeats() {
+    return seats;
+  }
 
-    public String getModel() {
-        return model;
-    }
+  public void setSeats(int seats) {
+    this.seats = seats;
+  }
 
-    public void setModel(String model) {
-        this.model = model;
-    }
+  public int getDoors() {
+    return doors;
+  }
 
-    public float getSize() {
-        return size;
-    }
+  public void setDoors(int doors) {
+    this.doors = doors;
+  }
 
-    public void setSize(float size) {
-        this.size = size;
-    }
+  public boolean isAc() {
+    return ac;
+  }
 
-    public String getColor() {
-        return color;
-    }
+  public void setAc(boolean ac) {
+    this.ac = ac;
+  }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
+  public boolean isGps() {
+    return gps;
+  }
 
-    public int getSeats() {
-        return seats;
-    }
+  public void setGps(boolean gps) {
+    this.gps = gps;
+  }
 
-    public void setSeats(int seats) {
-        this.seats = seats;
-    }
+  public boolean isReserved() {
+    return reserved;
+  }
 
-    public int getDoors() {
-        return doors;
-    }
+  public void setReserved(boolean reserved) {
+    this.reserved = reserved;
+  }
 
-    public void setDoors(int doors) {
-        this.doors = doors;
-    }
+  public GearBox getGearBox() {
+    return gearBox;
+  }
 
-    public boolean isAc() {
-        return ac;
-    }
+  public void setGearBox(GearBox gearBox) {
+    this.gearBox = gearBox;
+  }
 
-    public void setAc(boolean ac) {
-        this.ac = ac;
-    }
+  public FuelType getFuelType() {
+    return fuelType;
+  }
 
-    public boolean isGps() {
-        return gps;
-    }
+  public void setFuelType(FuelType fuelType) {
+    this.fuelType = fuelType;
+  }
 
-    public void setGps(boolean gps) {
-        this.gps = gps;
-    }
+  public EngineType getEngineType() {
+    return engineType;
+  }
 
-    public List<RentalTime> getRentalTimeList() {
-        return rentalTimeList;
-    }
+  public void setEngineType(EngineType engineType) {
+    this.engineType = engineType;
+  }
 
-    public void setRentalTimeList(List<RentalTime> rentalTimeList) {
-        this.rentalTimeList = rentalTimeList;
-    }
+  public VehicleCategory getVehicleCategory() {
+    return vehicleCategory;
+  }
 
-    public GearBox getGearBox() {
-        return gearBox;
-    }
+  public void setVehicleCategory(VehicleCategory vehicleCategory) {
+    this.vehicleCategory = vehicleCategory;
+  }
 
-    public void setGearBox(GearBox gearBox) {
-        this.gearBox = gearBox;
-    }
+  public double getPrice() {
+    return price;
+  }
 
-    public FuelType getFuelType() {
-        return fuelType;
-    }
-
-    public void setFuelType(FuelType fuelType) {
-        this.fuelType = fuelType;
-    }
-
-    public VehicleCategory getVehicleCategory() {
-        return vehicleCategory;
-    }
-
-    public void setVehicleCategory(VehicleCategory vehicleCategory) {
-        this.vehicleCategory = vehicleCategory;
-    }
-
-
-    @Override
-    public String toString() {
-        return " "  + id  + " " + brand + " " + model;
-    }
-
+  public void setPrice(double price) {
+    this.price = price;
+  }
 }
-
